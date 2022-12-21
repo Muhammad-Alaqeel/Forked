@@ -9,11 +9,11 @@ import 'package:get/get.dart';
 class myCamera extends StatelessWidget {
   double? height;
   Function()? funct;
-   myCamera({super.key, this.height, this.funct}){
-     if(height==null){
-       height=Get.height*(249/852);
-     }
-   }
+  myCamera({super.key, this.height, this.funct}) {
+    if (height == null) {
+      height = Get.height * (200 / 852);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +27,21 @@ class myCamera extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
           ),
-          padding: EdgeInsets.only(bottom: Get.width*(172/393)/8),
-          width: Get.width*(172/393),
-          height:height,
-      
-          child: Center(child: backgroundIcon(text: Text("Add Image",style: h2,),height:50 , centeredIcon: Icon(Icons.camera_alt_outlined,size: 35,),)),
-         
+          padding: EdgeInsets.only(bottom: Get.width * (172 / 393) / 8),
+          width: Get.width * (172 / 393),
+          height: height,
+          child: Center(
+              child: backgroundIcon(
+            text: Text(
+              "Add Image",
+              style: h2,
+            ),
+            height: 50,
+            centeredIcon: Icon(
+              Icons.camera_alt_outlined,
+              size: 35,
+            ),
+          )),
         ),
       ),
     );
