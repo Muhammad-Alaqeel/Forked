@@ -47,8 +47,8 @@ class startingMessage extends StatelessWidget {
                   Expanded(flex: 1, child: Container()),
 
           
-    //  SizedBox(height: 8,),
-    //   Texsthome(text1: 'sdsdf', text2: 'zxcvbn',)
+        //  SizedBox(height: 8,),
+        //  Texsthome(text1: 'Exploer', text2: 'view all',)
 
 
         

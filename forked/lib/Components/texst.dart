@@ -21,9 +21,9 @@ class Texsthome extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(text1,style: TextStyle(fontSize: 30,color:lightGreen ),),
-            Text(text2,style: TextStyle(fontSize: 30,color:lightGreen)),
-          
+         Text(text1,style:htext ,),
+          Text(text2,style: underlineGreenText ,)
+            
 
         ],
       ),
