@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'package:forked/Views/RegistrationNav.dart';
 
+import 'Components/texst.dart';
+
 main(){
 
   runApp(MyApp());
@@ -15,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
        initialRoute: NamedRoute.StratingPage,
-       getPages: appRoutes,
- //home: testing(),
+      getPages: appRoutes,
+ //home: Texsthome(text1: 'hellow', text2: 'view all',),
     );
   }
 }
