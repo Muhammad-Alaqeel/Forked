@@ -41,3 +41,17 @@ fontFamily: "Inter",
 fontWeight: FontWeight.w600,
 decoration: TextDecoration.underline
 );
+
+TextStyle userDisplayBold=TextStyle(
+color:  darkGreen,
+fontSize: 15,
+fontFamily: "Inter",
+fontWeight: FontWeight.w700
+);
+
+TextStyle UserDisplayLight=TextStyle(
+color:  darkGreen,
+fontSize: 13,
+fontFamily: "Inter",
+fontWeight: FontWeight.w400
+);

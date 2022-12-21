@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forked/Views/testing.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'package:forked/Views/RegistrationNav.dart';
@@ -13,9 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: NamedRoute.StratingPage,
-      getPages: appRoutes,
- 
+      // initialRoute: NamedRoute.StratingPage,
+      // getPages: appRoutes,
+ home: testing(),
     );
   }
 }
