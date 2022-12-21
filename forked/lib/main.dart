@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // initialRoute: NamedRoute.StratingPage,
-      // getPages: appRoutes,
- home: testing(),
+       initialRoute: NamedRoute.StratingPage,
+       getPages: appRoutes,
+ //home: testing(),
     );
   }
 }
