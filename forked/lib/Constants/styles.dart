@@ -22,6 +22,14 @@ fontFamily: "Inter",
 fontWeight: FontWeight.w700
 );
 
+TextStyle htext=TextStyle(
+color:  lightGreen,
+fontSize: 20,
+fontFamily: "Inter",
+fontWeight: FontWeight.w700
+);
+
+
 TextStyle h3=TextStyle(
 color:  darkGreen,
 fontSize: 18,
@@ -36,7 +44,7 @@ fontSize: 13,
 fontFamily: "Inter",
 fontWeight: FontWeight.w600
 );
-
+//يمثل الستايل الي تحتة خط
 TextStyle underline=TextStyle(
 color:  darkGreen,
 fontSize: 13,
@@ -44,6 +52,16 @@ fontFamily: "Inter",
 fontWeight: FontWeight.w600,
 decoration: TextDecoration.underline
 );
+// يمثل الستايل الي تحتة خط
+TextStyle underlineGreenText=TextStyle(
+color:  lightGreen,
+fontSize: 12,
+fontFamily: "Inter",
+fontWeight: FontWeight.w600,
+decoration: TextDecoration.underline
+);
+//يمثل الستايل الي تحتة خط
+
 
 TextStyle userDisplayBold=TextStyle(
 color:  darkGreen,

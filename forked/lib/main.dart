@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'package:forked/Views/RegistrationNav.dart';
 
+import 'Components/texst.dart';
+
 main(){
 
   runApp(MyApp());
@@ -15,9 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
       // initialRoute: NamedRoute.StratingPage,
       // getPages: appRoutes,
  home: createRecipe(),
+
     );
   }
 }
