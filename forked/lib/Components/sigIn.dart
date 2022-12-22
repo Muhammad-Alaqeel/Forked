@@ -27,10 +27,12 @@ class signIn extends StatelessWidget {
           child: Text("Log in to your account", maxLines: 2, style: h1,)),
  ),
 Expanded(flex: 2, child: SizedBox()),
- Expanded(flex: 6, child: myTextFeild(hint: "Username", icon: Icons.person_outline_rounded,)),
+ Expanded(flex: 6, child: myTextFeild(hint: "Username",
+  icon: Icons.person_outline_rounded,)),
 
 
-Expanded(flex: 6, child: myTextFeild(hint: "Password", icon: Icons.lock_outline,)),
+Expanded(flex: 6, child: myTextFeild(hint: "Password",
+ icon: Icons.lock_outline,)),
 
 Expanded(flex:2, child: Container(
   alignment: Alignment.topRight,
