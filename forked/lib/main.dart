@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forked/Views/CreateRecipe.dart';
 import 'package:forked/Views/testing.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
 
       // initialRoute: NamedRoute.StratingPage,
       // getPages: appRoutes,
- home:ProfilEdiet()
+
+ home: createRecipe(),
+
     );
   }
 }

@@ -7,7 +7,7 @@ class TextFieldCom extends StatelessWidget {
   TextFieldCom(
       {super.key,
       this.hint_Text,
-      this.borderColor,
+     required this.borderColor,
       this.Controller,
       this.hintSize,
       required this.IconImage});

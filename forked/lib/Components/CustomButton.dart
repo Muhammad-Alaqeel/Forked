@@ -11,8 +11,9 @@ class myButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:EdgeInsets.only(left: 35,right: 35,top: 8,bottom: 5),
-      child: Text(text, style: h2,),
+      // alignment: Alignment.center,
+      padding:EdgeInsets.only(left: 25,right: 25,top: 8,bottom: 8),
+      child: Center(child: Text(text, style: h2,)),
 
       decoration: BoxDecoration(
         color: backGroundColor,

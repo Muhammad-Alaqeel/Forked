@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 class backgroundIcon extends StatelessWidget {
-Text? text;
+Widget? text;
 double height;
 Color? backgroundColor;
 Widget? centeredIcon;
 bool? circular;
 double? border;
 double? padding;
+
    backgroundIcon({super.key,this.circular, this.backgroundColor,this.centeredIcon,required this.height,this.text}){
      if(this.circular==true){
        this.border=200;
