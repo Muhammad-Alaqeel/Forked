@@ -1,24 +1,20 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:forked/Components/AppBar.dart';
 import 'package:forked/Components/CustomButton.dart';
 import 'package:forked/Components/MyTextFeild.dart';
 import 'package:forked/Constants/styles.dart';
 import 'package:get/get.dart';
+
+
 
 class ProfilEdiet extends StatelessWidget {
   const ProfilEdiet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(appBar: AppBar(leading: IconButton
-    (icon:Icon(Icons.arrow_back_ios,color:darkGreen), onPressed: () {  }
-    ,),
-    shadowColor: Colors.lightGreen,
-    backgroundColor: Colors.white,
-    elevation: 1,
-    
-     ),
+    return  Scaffold(appBar:myappBar,
      body: Column(
       
       children: [SizedBox(height: 20,),
@@ -28,7 +24,7 @@ class ProfilEdiet extends StatelessWidget {
        InkWell(child: Text('Cancel',style:h2 ,)),
        InkWell(child: Text('Done',style: h2,)),
       ],),
-      SizedBox(height: 90,),
+      SizedBox(height: 70,),
 
        Center(
          child: Container(
@@ -42,7 +38,7 @@ class ProfilEdiet extends StatelessWidget {
        SizedBox(height: 10,),
        // myButton(text: 'Chang Profil photo',backGroundColor: lightGreen,)
          Container(
-         padding:EdgeInsets.all(20),
+         padding:EdgeInsets.only(left: 40,right: 40),
          decoration:BoxDecoration(
         
          borderRadius: BorderRadius.circular(100),
@@ -103,6 +99,5 @@ Expanded(
     
   }
 }
-
 
 
