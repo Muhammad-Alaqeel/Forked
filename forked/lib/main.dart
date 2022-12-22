@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forked/Views/CreateRecipe.dart';
 import 'package:forked/Views/testing.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
@@ -16,9 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-       initialRoute: NamedRoute.StratingPage,
-      getPages: appRoutes,
- //home: Texsthome(text1: 'hellow', text2: 'view all',),
+
+      // initialRoute: NamedRoute.StratingPage,
+      // getPages: appRoutes,
+ home: createRecipe(),
+
     );
   }
 }
