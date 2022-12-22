@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       // getPages: appRoutes,
 
  //home: createRecipe(),
- home: ProfilEdiet(),
+ //home: ProfilEdiet(),
 
     );
   }
