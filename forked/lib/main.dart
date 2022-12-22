@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'package:forked/Views/RegistrationNav.dart';
 
+import 'Components/profileEdiet.dart';
 import 'Components/texst.dart';
 
 main(){
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
 
       // initialRoute: NamedRoute.StratingPage,
       // getPages: appRoutes,
- home: createRecipe(),
+
+ //home: createRecipe(),
+ //home: ProfilEdiet(),
 
     );
   }
