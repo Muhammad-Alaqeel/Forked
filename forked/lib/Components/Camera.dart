@@ -7,12 +7,16 @@ import 'package:forked/Constants/styles.dart';
 import 'package:get/get.dart';
 
 class myCamera extends StatelessWidget {
+  String addI="";
   double? height;
   Function()? funct;
   myCamera({super.key, this.height, this.funct}) {
+    addI="Add Image";
     if (height == null) {
       height = Get.height * (200 / 852);
     }
+  
+
   }
 
   @override
@@ -33,7 +37,7 @@ class myCamera extends StatelessWidget {
           child: Center(
               child: backgroundIcon(
             text: Text(
-              "Add Image",
+              addI.toString(),
               style: h2,
             ),
             height: 50,

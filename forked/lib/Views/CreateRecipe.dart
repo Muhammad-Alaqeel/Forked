@@ -12,17 +12,32 @@ import '../Controllers/createRecipeController.dart';
 
 
 class createRecipe extends StatelessWidget {
-   createRecipe({super.key});
-createRecipeController myRecipeController=Get.put(createRecipeController());
+  bool isForked=false;
+  String? header;
+   createRecipe({super.key}){
+     if(isForked==true){
+       header="make it your own";
+     }else if(isForked==false){
+       header="create a new recipe";
+     }
+   }
+
+   TextEditingController c= TextEditingController();
+   createRecipeController myRecipeController=Get.put(createRecipeController());
+
+    
+
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
+          // children: mycONTROLLER.MYreceipies
           children: [
             Text(
-              "Create your recipe ",
+              header.toString(),
               style: h1,
             ),
             SizedBox(
@@ -155,6 +170,27 @@ createRecipeController myRecipeController=Get.put(createRecipeController());
                     myRecipeController.addIngredient();
                   },
                   child: myButton(text: "add ingredient", backGroundColor: BrightGreen, )),
+              ],
+            ),
+    
+    
+         
+           GetBuilder<createRecipeController>(builder: (w){
+              return    Column(
+                children: myRecipeController.stepTextField,
+              );
+            }),
+         
+             SizedBox(
+              height: 20,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                InkWell(
+                  onTap: (){
+                    myRecipeController.addStep();
+                  },
+                  child: myButton(text: "add steps", backGroundColor: BrightGreen, )),
               ],
             ),
           ],
