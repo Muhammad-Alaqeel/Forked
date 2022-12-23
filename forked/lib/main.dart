@@ -24,8 +24,32 @@ class MyApp extends StatelessWidget {
       // initialRoute: NamedRoute.StratingPage,
       //  getPages: appRoutes,
 
- //home: createRecipe(),
- home:testKhuloud(),
+
+ home: createRecipe(
+
+steps: [
+
+  SizedBox(),
+    SizedBox(),
+
+  SizedBox(),
+
+],
+
+
+
+
+ingredients: [
+
+  SizedBox(),
+
+  SizedBox(),
+
+],
+
+ ),
+ //home: ProfilEdiet(),
+
 
     );
   }

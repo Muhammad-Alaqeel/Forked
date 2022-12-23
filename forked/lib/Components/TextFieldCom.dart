@@ -7,23 +7,25 @@ class TextFieldCom extends StatelessWidget {
   TextFieldCom(
       {super.key,
       this.hint_Text,
-     required this.borderColor,
+      this.borderColor,
       this.Controller,
-      this.hintSize,
-      required this.IconImage});
-
+      required this.IconImage}) {
+    if (borderColor == null) borderColor = lightGreen;
+    if (sizeOfIcon == null) sizeOfIcon = 25;
+  }
   final String? hint_Text;
-  double? hintSize = 15;
-  double? sizeOfIcon = 25;
+  double? sizeOfIcon;
   final String IconImage;
-  final borderColor;
-  final Controller;
+
+  var borderColor;
+  var Controller;
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(minWidth: 100, minHeight: 60),
-      child: TextField(
+      child: TextFormField(
+
         controller: Controller,
         maxLines: null,
         cursorColor: grey,
@@ -40,7 +42,6 @@ class TextFieldCom extends StatelessWidget {
           ),
           prefixIconColor: grey,
           hintText: hint_Text,
-          hintStyle: TextStyle(fontSize: hintSize),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
             borderSide: BorderSide(color: borderColor, width: 3),
@@ -57,4 +58,3 @@ class TextFieldCom extends StatelessWidget {
     );
   }
 }
-

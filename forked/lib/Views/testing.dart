@@ -37,9 +37,7 @@ List<TextEditingController> lis=[];
           });
           }, child: Text("data")),
 
-          myCamera(funct: (){
-            
-          },)
+          
 
         ],
       ),
