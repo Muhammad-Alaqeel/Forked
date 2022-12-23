@@ -12,12 +12,15 @@ import '../Controllers/createRecipeController.dart';
 
 
 class createRecipe extends StatelessWidget {
-  bool isForked=false;
+
+  List<Widget>? steps;
+ List<Widget>?  ingredients;
+int forking=0;
   String? header;
-   createRecipe({super.key}){
-     if(isForked==true){
+   createRecipe({super.key, this.steps,this.ingredients}){
+     if(steps!=null){
        header="make it your own";
-     }else if(isForked==false){
+     }else {
        header="create a new recipe";
      }
    }
@@ -65,7 +68,7 @@ class createRecipe extends StatelessWidget {
               borderColor: lightGreen,
               hint_Text: "recipe name",
             ),
-            true == true
+           steps!=null
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -155,6 +158,14 @@ class createRecipe extends StatelessWidget {
             ),
             // TextFieldCom(borderColor: lightGreen, IconImage: "images/add.png"),
             GetBuilder<createRecipeController>(builder: (w){
+
+               if(steps !=null && steps!=[] && ingredients !=null && ingredients!=[] && forking==0 ){
+               print("object");
+             myRecipeController.addForkedFields(steps: steps,ingredients: ingredients);
+             forking++;
+             }
+
+
               return    Column(
                 children: myRecipeController.ingredientsTextFielsAndX,
               );
@@ -176,6 +187,9 @@ class createRecipe extends StatelessWidget {
     
          
            GetBuilder<createRecipeController>(builder: (w){
+
+            
+
               return    Column(
                 children: myRecipeController.stepTextField,
               );
@@ -193,6 +207,22 @@ class createRecipe extends StatelessWidget {
                   child: myButton(text: "add steps", backGroundColor: BrightGreen, )),
               ],
             ),
+       
+       
+       
+       SizedBox(height: 80,),
+
+
+       Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+         children: [
+           myButton(text: "Save", backGroundColor: BrightGreen,),
+               myButton(text: "Cancel", backGroundColor: BrightGreen,),
+         ],
+       ),
+
+
+       
+       
           ],
         ),
       ),

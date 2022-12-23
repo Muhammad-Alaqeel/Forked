@@ -7,14 +7,15 @@ import 'package:forked/Components/bsckGroundIcon.dart';
 import 'package:forked/Constants/styles.dart';
 
 class addFeild extends StatelessWidget {
-  String? hint, initailValue;
+  String? hint;
+
   TextEditingController textController;
   Function()? imageFunction;
   Function()? deletingFunction;
 
   addFeild(
       {super.key,
-      this.initailValue,
+    
       this.deletingFunction,
       this.imageFunction,
       required this.textController}){
@@ -57,7 +58,7 @@ class addFeild extends StatelessWidget {
                 imageFunction==null?SizedBox():  Container( margin: EdgeInsets.only(bottom: 16), child: myCamera(funct: imageFunction,)),
 
 
-                  TextFieldCom(IconImage: "images/add.png", hint_Text: hint, Controller: textController, initial_Value: initailValue,),
+                  TextFieldCom(IconImage: "images/add.png", hint_Text: hint, Controller: textController),
                 ]),
               
         ],
