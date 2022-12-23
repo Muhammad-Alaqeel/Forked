@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:forked/Components/MyTextFeild.dart';
 import 'package:forked/Components/startingMessage.dart';
-import 'package:forked/Components/texst.dart';
 import 'package:forked/Constants/styles.dart';
 
 import 'bsckGroundIcon.dart';
