@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:forked/Components/Recipeinfo.dart';
 import 'package:forked/Constants/styles.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
@@ -49,16 +50,16 @@ class ViewRecipe extends StatelessWidget {
                         //Top row :For name of recipe and likes
                         Container(
                           width: Get.width * .9,
-                          color: Colors.amber,
+                          //color: Colors.amber,
                           child: Row(
                             children: [
                               Expanded(
-                                flex: 2,
+                                flex: 3,
                                 child: Container(
-                                  height: 46,
-                                  color: Colors.blueGrey,
+                                  height: 25,
+                                  //color: Colors.blueGrey,
                                   child: Text(
-                                    "Pancake Pancake Pancake Pancake",
+                                    "Pancake ",
                                     style: h2,
                                   ),
                                 ),
@@ -66,8 +67,8 @@ class ViewRecipe extends StatelessWidget {
                               Expanded(
                                 flex: 1,
                                 child: Container(
-                                  color: Colors.tealAccent,
-                                  child: LikeButton(likeCount: 0 //****
+                                  //color: Colors.tealAccent,
+                                  child: LikeButton(likeCount: 100 //****
                                       ),
                                 ),
                               )
@@ -77,16 +78,34 @@ class ViewRecipe extends StatelessWidget {
 
                         //cook name :
                         Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
+                          margin: EdgeInsets.symmetric(vertical: 2),
                           height: 25,
-                          width: Get.width * .85,
-                          color: Colors.pink,
+                          width: Get.width * .9,
+                          //color: Colors.pink,
+                          child: Text("Derived from pancake"),
+                        ),
+
+                        //Derived :
+                        Container(
+                          margin: EdgeInsets.only(bottom: 10),
+                          height: 25,
+                          width: Get.width * .9,
+                          //color: Colors.pink,
                           child: Text("Chef B"),
                         ),
 
                         //info:
+                        SizedBox(
+                            height: 100,
+                            width: 200,
+                            child: RecipeInfo(
+                              cal: "200",
+                              serving: "5",
+                              time: "50",
+                            )),
 
-                        
+                        //test:
+                           
                       ],
                     ),
                   ),

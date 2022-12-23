@@ -21,32 +21,32 @@ class MyApp extends StatelessWidget {
       // getPages: appRoutes,
 
 
-      //home: ViewRecipe(),
+      home: ViewRecipe(),
 
- home: createRecipe(
+//  home: createRecipe(
 
-steps: [
+// steps: [
 
-  SizedBox(),
-    SizedBox(),
+//   SizedBox(),
+//     SizedBox(),
 
-  SizedBox(),
+//   SizedBox(),
 
-],
-
-
+// ],
 
 
-ingredients: [
 
-  SizedBox(),
 
-  SizedBox(),
+// ingredients: [
 
-],
+//   SizedBox(),
 
- ),
- //home: ProfilEdiet(),
+//   SizedBox(),
+
+// ],
+
+//  ),
+//  //home: ProfilEdiet(),
 
 
     );

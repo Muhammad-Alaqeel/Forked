@@ -1,9 +1,6 @@
-import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:forked/Constants/styles.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +28,7 @@ class RecipeInfo extends StatelessWidget {
                 width: Get.width /16,
                         decoration:  BoxDecoration(
           image:  DecorationImage(
-              image:  AssetImage("images/timeicon.png"),
+              image:  AssetImage("images/time.png"),
               fit: BoxFit.fill,
           )
         )
@@ -58,7 +55,7 @@ class RecipeInfo extends StatelessWidget {
                   width: Get.width /16,
                               decoration:  BoxDecoration(
           image:  DecorationImage(
-              image:  AssetImage("images/servingicon.png"),
+              image:  AssetImage("images/serving.png"),
               fit: BoxFit.fill,
           )
         ) 
@@ -88,7 +85,7 @@ class RecipeInfo extends StatelessWidget {
                   width: Get.width /16,
                                 decoration:  BoxDecoration(
           image:  DecorationImage(
-              image:  AssetImage("images/calorieicon.png"),
+              image:  AssetImage("images/cal.png",),
               fit: BoxFit.fill,
           )
         )
