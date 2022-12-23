@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forked/Views/CreateRecipe.dart';
 import 'package:forked/Views/ViewRecipe.dart';
 
 
@@ -19,9 +20,35 @@ class MyApp extends StatelessWidget {
       // initialRoute: NamedRoute.StratingPage,
       // getPages: appRoutes,
 
-      //home: createRecipe(),
-      //home: ProfilEdiet(),
-      home: ViewRecipe(),
+
+      //home: ViewRecipe(),
+
+ home: createRecipe(
+
+steps: [
+
+  SizedBox(),
+    SizedBox(),
+
+  SizedBox(),
+
+],
+
+
+
+
+ingredients: [
+
+  SizedBox(),
+
+  SizedBox(),
+
+],
+
+ ),
+ //home: ProfilEdiet(),
+
+
     );
   }
 }

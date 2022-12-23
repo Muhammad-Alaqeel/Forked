@@ -7,9 +7,8 @@ class TextFieldCom extends StatelessWidget {
   TextFieldCom(
       {super.key,
       this.hint_Text,
-     required this.borderColor,
+      this.borderColor,
       this.Controller,
-      this.initial_Value,
       required this.IconImage}) {
     if (borderColor == null) borderColor = lightGreen;
     if (sizeOfIcon == null) sizeOfIcon = 25;
@@ -17,7 +16,7 @@ class TextFieldCom extends StatelessWidget {
   final String? hint_Text;
   double? sizeOfIcon;
   final String IconImage;
-  String? initial_Value;
+
   var borderColor;
   var Controller;
 
@@ -26,7 +25,7 @@ class TextFieldCom extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints(minWidth: 100, minHeight: 60),
       child: TextFormField(
-        initialValue: initial_Value,
+
         controller: Controller,
         maxLines: null,
         cursorColor: grey,
