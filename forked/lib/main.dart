@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:forked/Components/textField.dart';
 import 'package:forked/Views/CreateRecipe.dart';
+import 'package:forked/Views/khuloudTest.dart';
 import 'package:forked/Views/testing.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
 
       // initialRoute: NamedRoute.StratingPage,
-      // getPages: appRoutes,
+      //  getPages: appRoutes,
+
 
  home: createRecipe(
 
@@ -46,6 +49,7 @@ ingredients: [
 
  ),
  //home: ProfilEdiet(),
+
 
     );
   }
