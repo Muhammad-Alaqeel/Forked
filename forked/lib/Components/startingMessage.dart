@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:forked/Components/Titles.dart';
+
 import 'package:forked/Components/texst.dart';
 import 'package:forked/Components/textField.dart';
+
 import 'package:get/get.dart';
 import 'package:forked/Components/CustomButton.dart';
 import 'package:forked/Constants/styles.dart';

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:forked/Views/BNBar.dart';
 import 'package:get/get.dart';
 import 'package:forked/Components/CustomButton.dart';
 import 'package:forked/Components/MyTextFeild.dart';
@@ -167,7 +168,7 @@ Expanded(flex:3, child: Container(
 
 Expanded(
   flex: 4,
-  child: myButton(text: "Login",backGroundColor: lightGreen,)),
+  child: InkWell(onTap:(() =>  Get.to(BNBart())),child: myButton(text: "Login",backGroundColor: lightGreen,))),
 Expanded(flex:3, child: Container(
   alignment: Alignment.bottomLeft,
   child: InkWell(
