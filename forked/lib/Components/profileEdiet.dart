@@ -59,8 +59,8 @@ class ProfilEdiet extends StatelessWidget {
   icon: Icons.person_outline_rounded,)),
 
 
-Expanded( child: myTextFeild(hint: "Example@gmail.com",
- icon: Icons.email,)),
+// Expanded( child: myTextFeild(hint: "Example@gmail.com",
+//  icon: Icons.email,)),
  //ملاحظة التكست طويل جدا يختفي عن المستخدم فما يعرف ايش كتب بالبايو حقة
 
 Expanded( child: myTextFeild(hint: "I am a stay-at-home mom (sounds better than recently retired, don't you think?)who loves to spend time in my kitchen",
