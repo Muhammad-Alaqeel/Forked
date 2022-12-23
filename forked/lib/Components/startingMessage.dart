@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:forked/Components/Titles.dart';
+
+import 'package:forked/Components/texst.dart';
+import 'package:forked/Components/textField.dart';
+
 import 'package:get/get.dart';
 import 'package:forked/Components/CustomButton.dart';
 import 'package:forked/Constants/styles.dart';
@@ -27,7 +32,7 @@ class startingMessage extends StatelessWidget {
                     child: Text("Give your day a fresh start", maxLines: 2, style: h1,)),
            ),
         
-        
+     
 
 //  SizedBox(height: 10,),
           Expanded(flex: 1,
@@ -47,10 +52,6 @@ class startingMessage extends StatelessWidget {
                   Expanded(flex: 1, child: Container()),
 
           
-        //  SizedBox(height: 8,),
-        //  Texsthome(text1: 'Exploer', text2: 'view all',)
-
-
         
          ],
        ),
