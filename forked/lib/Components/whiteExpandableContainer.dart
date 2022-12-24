@@ -13,12 +13,13 @@ class whiteExpandableContainer extends StatelessWidget {
      List<Widget>? pages;
    whiteExpandableContainer({super.key, required this.height}){
      print("$height");
-     pages=[startingMessage(myController: navController),signIn(myController: navController,), signUp(myController: navController,),forgotPass()];
+     pages=[startingMessage(myController: navController),signIn(myController: navController,), signUp(myController: navController,),forgotPass(myController:  navController,)];
 
    }
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
+     curve: Curves.easeIn,
       duration: Duration(milliseconds: 500),
       height: height,
       width: Get.width,

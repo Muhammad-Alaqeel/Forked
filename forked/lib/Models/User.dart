@@ -1,5 +1,7 @@
 import 'package:forked/Models/Recipie.dart';
 
+// i am not sure of how to handle arrays in factory, we need to check that ince we get the data
+
 class User {
   int? id;
   String? username;
@@ -10,8 +12,8 @@ class User {
   Recipe? forkedlRecipes;
   Recipe? savedRecipes;
   Recipe? likedRecipes;
-  User? following;
-  User? followers;
+  List<User?>? following;
+  List<User?>? followers;
 
   User(
       {this.id,
@@ -38,8 +40,9 @@ class User {
       forkedlRecipes: Recipe.fronJson(json['recipes']),
       savedRecipes: Recipe.fronJson(json['recipes']),
       likedRecipes: Recipe.fronJson(json['recipes']),
-      following: User.fronJson(json['following']),
-      followers: User.fronJson(json['followers']),
+      // 
+      following: List<User>.from(json['following'].map((x) => x)),
+      followers: List<User>.from(json['followers'].map((x) => x)),
     );
   }
 }

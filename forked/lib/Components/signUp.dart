@@ -35,7 +35,7 @@ Expanded(flex: 2, child: SizedBox()),
 Expanded(flex: 6, child: myTextFeild(hint: "Password", icon: Icons.lock_outline,)),
 Expanded(flex: 6, child: myTextFeild(hint: "Re-enter Password", icon: Icons.lock_outline,)),
 
-Expanded(flex:3, child: Container(
+Expanded(flex:4, child: Container(
   alignment: Alignment.topCenter,
   child: InkWell(
    
@@ -167,7 +167,7 @@ Expanded(flex:3, child: Container(
 )),
 
 Expanded(
-  flex: 4,
+  flex: 5,
   child: InkWell(onTap:(() =>  Get.to(BNBart())),child: myButton(text: "Login",backGroundColor: lightGreen,))),
 Expanded(flex:3, child: Container(
   alignment: Alignment.bottomLeft,
