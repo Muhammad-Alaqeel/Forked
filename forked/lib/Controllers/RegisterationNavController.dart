@@ -11,24 +11,24 @@ import '../Components/whiteExpandableContainer.dart';
 
 class RegisterationController extends GetxController{
   int currentPage=0;
-  double height=(Get.height*(270/850));
+  double height=(Get.height*(350/850));
   
 
   moveToLogin(){
     currentPage=1;
-    height=(Get.height*(500/850));
+    height=(Get.height*(600/850));
     update();
   }
 
  moveToSignUp(){
     currentPage=2;
-    height=(Get.height*(540/850));
+    height=(Get.height*(640/850));
     update();
   }
 
    moveToForgotPass(){
     currentPage=3;
-    height=(Get.height*(240/850));
+    height=(Get.height*(340/850));
     update();
   }
 

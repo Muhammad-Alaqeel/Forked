@@ -43,7 +43,7 @@ Expanded(flex:2, child: Container(
 )),
 
 Expanded(
-  flex: 3,
+  flex: 4,
   child: InkWell(
  
     onTap:(() =>  Get.to(BNBart())),

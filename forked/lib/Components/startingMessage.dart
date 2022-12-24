@@ -65,15 +65,18 @@ class startingMessage extends StatelessWidget {
               child: Stack(
           children: [
             Text("Start cooking whatever you crave . Get creative and create your own recipes. ", style: h3 ,)
-              , FractionallySizedBox(
-                heightFactor: 1,
-                widthFactor: 1,
-                child: Container(
-                    alignment: Alignment.bottomRight,
-                    child:  InkWell(
-                      onTap: ()=>myController.moveToLogin(),
-                      child: myButton(text: "Start", backGroundColor: lightGreen,))
-                    ),
+              , Align(
+                alignment: Alignment.bottomRight,
+                child: FractionallySizedBox(
+                  heightFactor: .4,
+                  widthFactor: .4,
+                  child: Container(
+                      alignment: Alignment.bottomRight,
+                      child:  InkWell(
+                        onTap: ()=>myController.moveToLogin(),
+                        child: myButton(text: "Start", backGroundColor: lightGreen,))
+                      ),
+                ),
               ),
          
             
