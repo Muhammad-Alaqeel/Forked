@@ -6,6 +6,7 @@ import 'package:forked/Views/ViewRecipe.dart';
 
 
 import 'package:forked/Views/khuloudTest.dart';
+import 'package:forked/Views/test.dart';
 import 'package:forked/Views/testing.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
@@ -38,7 +39,6 @@ class MyApp extends StatelessWidget {
 //   SizedBox(),
 
 // ],
-
 
 
 
