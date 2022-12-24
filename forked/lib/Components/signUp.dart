@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:forked/Services/FireBaseAuth/EmailPass.dart';
 import 'package:forked/Views/BNBar.dart';
 import 'package:get/get.dart';
 import 'package:forked/Components/CustomButton.dart';
@@ -11,7 +12,7 @@ import '../Controllers/RegisterationNavController.dart';
 class signUp extends StatelessWidget {
   RegisterationController myController;
    signUp({super.key, required this.myController});
-
+TextEditingController? username=TextEditingController(),email=TextEditingController(), password=TextEditingController(),rePassword=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,12 +29,20 @@ class signUp extends StatelessWidget {
           child: Text("Create an account", maxLines: 2, style: h1,)),
  ),
 Expanded(flex: 2, child: SizedBox()),
- Expanded(flex: 6, child: myTextFeild(hint: "Username", icon: Icons.person_outline_rounded,)),
- Expanded(flex: 6, child: myTextFeild(hint: "Email", icon: Icons.email_outlined,)),
+ Expanded(flex: 6, child: myTextFeild(
+   controller: username,
+   hint: "Username", icon: Icons.person_outline_rounded,)),
+ Expanded(flex: 6, child: myTextFeild(
+   controller: email,
+   hint: "Email", icon: Icons.email_outlined,)),
 
 
-Expanded(flex: 6, child: myTextFeild(hint: "Password", icon: Icons.lock_outline,)),
-Expanded(flex: 6, child: myTextFeild(hint: "Re-enter Password", icon: Icons.lock_outline,)),
+Expanded(flex: 6, child: myTextFeild(
+  controller: password,
+  hint: "Password", icon: Icons.lock_outline,)),
+Expanded(flex: 6, child: myTextFeild(
+  controller: rePassword,
+  hint: "Re-enter Password", icon: Icons.lock_outline,)),
 
 Expanded(flex:4, child: Container(
   alignment: Alignment.topCenter,
@@ -168,7 +177,18 @@ Expanded(flex:4, child: Container(
 
 Expanded(
   flex: 5,
-  child: InkWell(onTap:(() =>  Get.to(BNBart())),child: myButton(text: "Login",backGroundColor: lightGreen,))),
+  child: InkWell(onTap:(){
+    print(username!.text.toString());
+        print(email!.text.toString());
+
+    print(password!.text.toString());
+
+    print(rePassword!.text.toString());
+
+    createAccount(email: email!.text, password: password!.text, rePassword: rePassword!.text, username: username!.text);
+
+  //  Get.to(BNBart());
+  },child: myButton(text: "Sign up",backGroundColor: lightGreen,))),
 Expanded(flex:3, child: Container(
   alignment: Alignment.bottomLeft,
   child: InkWell(
