@@ -6,7 +6,8 @@ import 'package:forked/Constants/styles.dart';
 class myTextFeild extends StatelessWidget {
   IconData icon;
   String hint;
-   myTextFeild({super.key, required this.icon,required this.hint});
+  TextEditingController? controller;
+   myTextFeild({super.key, required this.icon,required this.hint, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class myTextFeild extends StatelessWidget {
         children: [
           Expanded(flex: 40,
             child: TextField(
-              
+              controller: controller,
               decoration:InputDecoration(
               
                 hintText:hint ,

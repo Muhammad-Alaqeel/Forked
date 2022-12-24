@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:forked/Services/FireBaseAuth/EmailPass.dart';
 import 'package:forked/Views/BNBar.dart';
 import 'package:get/get.dart';
 import 'package:forked/Components/CustomButton.dart';
@@ -11,7 +12,7 @@ import '../Controllers/RegisterationNavController.dart';
 class signIn extends StatelessWidget {
     RegisterationController myController;
    signIn({super.key, required this.myController});
-
+TextEditingController password=TextEditingController(),email=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,11 +29,15 @@ class signIn extends StatelessWidget {
           child: Text("Log in to your account", maxLines: 2, style: h1,)),
  ),
 Expanded(flex: 2, child: SizedBox()),
- Expanded(flex: 6, child: myTextFeild(hint: "Username",
+ Expanded(flex: 6, child: myTextFeild(
+   controller: email,
+   hint: "Email",
   icon: Icons.person_outline_rounded,)),
 
 
-Expanded(flex: 6, child: myTextFeild(hint: "Password",
+Expanded(flex: 6, child: myTextFeild(
+  controller: password,
+  hint: "Password",
  icon: Icons.lock_outline,)),
 
 Expanded(flex:2, child: Container(
@@ -46,7 +51,7 @@ Expanded(
   flex: 4,
   child: InkWell(
  
-    onTap:(() =>  Get.to(BNBart())),
+    onTap:(){loginWithPass(email: email.text, password: password.text);},
     child: myButton(text: "Login",backGroundColor: lightGreen,))),
 Expanded(flex:3, child: Container(
   alignment: Alignment.bottomLeft,
