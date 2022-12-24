@@ -102,9 +102,7 @@ class ViewRecipe extends StatelessWidget {
                               cal: "200",
                               serving: "5",
                               time: "50",
-                            )),
-
-                        //test:
+                            )),                       
                            
                       ],
                     ),

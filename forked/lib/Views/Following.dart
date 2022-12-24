@@ -16,7 +16,7 @@ class Following extends StatelessWidget {
           width: Get.width,
           child: SmallCardRecipeCard(
             recipeName: "pancake",
-            userName: "",
+            userName: "muhammed alaqeel",
             funct: () {},
            
           ),

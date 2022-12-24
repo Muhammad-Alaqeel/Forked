@@ -37,101 +37,104 @@ class SmallCardRecipeCard extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: InkWell(
-              onTap: funct,
-              child: Container(
-                height: heightVar,
-                width: WidthVar,
-                // color: Colors.lightGreen,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            // color: Colors.lightGreen,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //----------------------------image------------------------------------
+                // Expanded(child: Container()),
+                Expanded(
+                  flex: 6,
+                  child: InkWell(
+                    onTap: funct,
+                    child: FractionallySizedBox(
+                      widthFactor: 1,
+                      child: Container(
+                        // height: heightVar -10,
+                        //width: WidthVar,
+                        // color: Colors.amber,
+                        child: FittedBox(
+                          child: Image.asset(recipeImage!),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                //---------------------------------------------------------------------
+                Container(
+                  // height: 50,
+                  width: WidthVar,
+                  // color: Colors.amber,
+                  margin: EdgeInsets.only(top: 10, bottom: 20),
+                  child: Text(
+                    recipeName,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: darkGreen),
+                  ),
+                ),
+                //main row
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    //----------------------------image------------------------------------
-                    // Expanded(child: Container()),
-                    Expanded(
-                      flex: 6,
-                      child: FractionallySizedBox(
-                        widthFactor: 1,
-                        child: Container(
-                          // height: heightVar -10,
-                          //width: WidthVar,
-                          // color: Colors.amber,
-                          child: FittedBox(
-                            child: Image.asset(recipeImage!),
-                            fit: BoxFit.fill,
-                          ),
+                    //-----------------------Like-----------------------------------
+                    FittedBox(
+                      fit: BoxFit.contain,
+                      child: Container(
+                        //color: Colors.blue,
+                        child: LikeButton(
+                          size: 24,
+                          likeCount: recipeLikeCount,
                         ),
                       ),
                     ),
-                    //---------------------------------------------------------------------
-                    Container(
-                      // height: 50,
-                      width: WidthVar,
-                      // color: Colors.amber,
-                      margin: EdgeInsets.only(top: 10, bottom: 20),
-                      child: Text(
-                        recipeName,
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: darkGreen),
-                      ),
-                    ),
-                    //main row
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        //-----------------------Like-----------------------------------
-                        FittedBox(
-                          fit: BoxFit.contain,
-                          child: Container(
-                            //color: Colors.blue,
-                            child: LikeButton(
-                              size: 24,
-                              likeCount: recipeLikeCount,
-                            ),
-                          ),
-                        ),
-                        //-----------------------Account--------------------------------
-                        
-                        userName == null
-                            ? SizedBox()
-                            : Container(
-                                //color: Colors.green,
-                                child: Row(
-                                  children: [
-                                    //-----------------------avatar---------------------------------
-                                    FittedBox(
-                                        fit: BoxFit.contain,
-                                        child: Container(
-                                          height: 23,
-                                          width: 23,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                          ),
-                                          child: FittedBox(
-                                            child: Image.asset(userAvatar),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        )),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
+                    //-----------------------Account--------------------------------
+
+                    userName == null
+                        ? SizedBox()
+                        : Container(
+                            //color: Colors.green,
+                            child: Row(
+                              children: [
+                                //-----------------------avatar---------------------------------
+                                FittedBox(
+                                    fit: BoxFit.contain,
+                                    child: Container(
+                                      height: 23,
+                                      width: 23,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(15),
+                                      ),
+                                      child: FittedBox(
+                                        child: Image.asset(userAvatar),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    )),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Container(
+                                  height: 50,
+                                  width: 80,
+                                  child: Center(
+                                    child: Text(
+                            
                                       userName,
                                       style: h4,
-                                    )
-                                  ],
-                                ),
-                              )
-                      ],
-                    ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
                   ],
                 ),
-              ),
-            ), //
+              ],
+            ),
           ),
         ),
       ],

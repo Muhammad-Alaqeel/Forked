@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:forked/Views/CreateRecipe.dart';
+import 'package:forked/Views/Following.dart';
+import 'package:forked/Views/Home.dart';
 import 'package:forked/Views/ViewRecipe.dart';
+import 'package:forked/Views/test.dart';
 
 
 import 'package:get/get.dart';
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
       // getPages: appRoutes,
 
 
-      home: ViewRecipe(),
+    home: Home(),
 
 //  home: createRecipe(
 

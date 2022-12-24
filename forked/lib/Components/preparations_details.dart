@@ -12,52 +12,43 @@ class StepsDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height-600,
-      width: Get.width,
-      color: Colors.amberAccent,
+    return Column(
+      children: [
+        //steps
 
-      child: Column(
-        children: [
-          //steps
-
-          Padding(
-            padding: const EdgeInsets.only( bottom: 10),
-            child: Container(
-              child: Expanded(
-                flex: 1,
-                child: Row(
-                  children: [
-                     Text(
-                        "step ",
-                        style: h2,
-                      ),
-                    
-                    Text(
-                      step.toString(),
-                      style: h2,
-                    ),
-                  ],
+        Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Container(
+            child: Row(
+              children: [
+                Text(
+                  "step ",
+                  style: h2,
                 ),
-              ),
+                Text(
+                  step.toString(),
+                  style: h2,
+                ),
+              ],
             ),
           ),
-
-          //details
-          Expanded(
-            flex: 2,
-            child: Container(
-              alignment: Alignment.topLeft,
-               // height: Get.height-600,
-                color: Colors.brown,
-                child: Text(
-                  stepdetail!,
-                  style: h4,
-                ),
-              ),
         ),
-        ],
-      ),
+
+        //details
+        Expanded(
+          flex: 1,
+          child: Container(
+            alignment: Alignment.topLeft,
+            // height: Get.height-600,
+            color: Colors.brown,
+            child: Text(
+              stepdetail!,
+              style: h4,
+              maxLines: 101,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
