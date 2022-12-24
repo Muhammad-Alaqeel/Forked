@@ -3,12 +3,16 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:forked/Components/Recipeinfo.dart';
 import 'package:forked/Constants/styles.dart';
+import 'package:forked/Controllers/viewRecipeController.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
 
-class ViewRecipe extends StatelessWidget {
-  const ViewRecipe({super.key});
+import '../Components/picker.dart';
+import '../Components/preparations_details.dart';
 
+class ViewRecipe extends StatelessWidget {
+  ViewRecipe({super.key});
+  viewRecipeController myController = Get.put(viewRecipeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,8 +106,80 @@ class ViewRecipe extends StatelessWidget {
                               cal: "200",
                               serving: "5",
                               time: "50",
-                            )),                       
-                           
+                            )),
+
+                        //test:
+                        SizedBox(
+                          height: 18,
+                        ),
+                        GetBuilder<viewRecipeController>(builder: (d) {
+                          return picker(
+                            first: "Ingredients",
+                            second: "Preperation",
+                            third: "Chef innovation",
+                            pickerIndex: myController.currentIndex!,
+                            f1: () {
+                              myController.setIndex(index: 0);
+                            },
+                            f2: () {
+                              myController.setIndex(index: 1);
+                            },
+                            f3: () {
+                              myController.setIndex(index: 2);
+                            },
+                          );
+                        }),
+                        SizedBox(
+                          height: 10,
+                        ),
+
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            color: Color.fromARGB(255, 255, 198, 198),
+                            child:
+                                GetBuilder<viewRecipeController>(builder: (f) {
+                              return ListView(
+                                children: [
+                                  //test to display steps
+                                  myController.currentIndex == 1
+                                      ? Padding(
+                                          padding: EdgeInsets.all(0),
+                                          child: Column(
+                                            children: myController.steps!,
+                                          ),
+                                        )
+                                      : SizedBox(),
+
+                                  //test to display steps
+
+                                  myController.currentIndex == 0
+                                      ? Padding(
+                                          padding: EdgeInsets.all(0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: myController.ingredients!,
+                                          ),
+                                        )
+                                      : SizedBox(),
+
+                                  //test to display steps
+                                  myController.currentIndex == 2
+                                      ? Padding(
+                                          padding: EdgeInsets.all(0),
+                                          child: Column(
+                                            children: myController.forks!,
+                                          ),
+                                        )
+                                      : SizedBox(),
+                                ],
+                              );
+                            }),
+                          ),
+                        )
                       ],
                     ),
                   ),

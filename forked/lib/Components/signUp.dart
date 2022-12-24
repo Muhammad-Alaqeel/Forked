@@ -150,7 +150,7 @@ Expanded(flex:3, child: Container(
                                   borderRadius: BorderRadius.circular(100),
                                      ), 
                                     
-                                    child: myButton(text: '      Close',backGroundColor: lightGreen,))
+                                    child: myButton(text: 'Close',backGroundColor: lightGreen,))
                                 
                                 ],
                                

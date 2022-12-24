@@ -13,41 +13,23 @@ class StepsDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         //steps
 
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10),
-          child: Container(
-            child: Row(
-              children: [
-                Text(
-                  "step ",
-                  style: h2,
-                ),
-                Text(
-                  step.toString(),
-                  style: h2,
-                ),
-              ],
-            ),
-          ),
-        ),
+        Text(
+           "step ${step.toString()}",
+           style: h2,
+         ),
 
+        SizedBox(height: 20,),
         //details
-        Expanded(
-          flex: 1,
-          child: Container(
-            alignment: Alignment.topLeft,
-            // height: Get.height-600,
-            color: Colors.brown,
-            child: Text(
-              stepdetail!,
-              style: h4,
-              maxLines: 101,
-            ),
-          ),
+        Text(
+          stepdetail!,
+          style: h4,
         ),
+                SizedBox(height: 30,),
+
       ],
     );
   }
