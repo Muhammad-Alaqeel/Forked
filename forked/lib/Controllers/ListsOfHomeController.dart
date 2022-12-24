@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:forked/Components/SmallCardRecipeCard.dart';
+import 'package:forked/Components/CardRecipeCard.dart';
 import 'package:forked/Components/userDisplay.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
@@ -37,7 +37,7 @@ class ListsOfHomeController extends GetxController {
           recipeName: "pancake",
           recipeImage: "images/6.jpg",
           userName:
-              "amjad saleh aldubayan amjad saleh aldubayan amjad saleh aldubayan",
+              "amjad saleh aldubayan ",
           funct: () {},
         ),
       ),

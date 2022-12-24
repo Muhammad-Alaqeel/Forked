@@ -10,14 +10,11 @@ class SmallCardRecipeCard extends StatelessWidget {
       this.recipeLikeCount,
       this.userName,
       this.funct,
-      // this.viewAccountBool,
       this.userAvatar,
       this.recipeImage}) {
     if (recipeImage == null) recipeImage = defaultImage;
     if (recipeLikeCount == null) recipeLikeCount = 0;
     if (userAvatar == null) userAvatar = defaultAvatar;
-    //if (userName == null) userName = "";
-    //if (viewAccountBool == null) viewAccount = false;
   }
   String? recipeImage;
   final String recipeName;
@@ -25,7 +22,7 @@ class SmallCardRecipeCard extends StatelessWidget {
   var userName;
   var userAvatar;
   Function()? funct;
-  //bool? viewAccountBool;
+
   double WidthVar = Get.width * (190 / 393);
   double heightVar = Get.height * (330 / 852);
 
@@ -54,7 +51,11 @@ class SmallCardRecipeCard extends StatelessWidget {
                         //width: WidthVar,
                         // color: Colors.amber,
                         child: FittedBox(
-                          child: Image.asset(recipeImage!),
+                          child: Material(
+                            child: InkWell(
+                                onTap: funct,
+                                child: Image.asset(recipeImage!)),
+                          ),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -105,8 +106,7 @@ class SmallCardRecipeCard extends StatelessWidget {
                                       height: 23,
                                       width: 23,
                                       decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(15),
+                                        borderRadius: BorderRadius.circular(15),
                                       ),
                                       child: FittedBox(
                                         child: Image.asset(userAvatar),
@@ -121,7 +121,6 @@ class SmallCardRecipeCard extends StatelessWidget {
                                   width: 80,
                                   child: Center(
                                     child: Text(
-                            
                                       userName,
                                       style: h4,
                                       overflow: TextOverflow.ellipsis,

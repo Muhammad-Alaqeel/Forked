@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:forked/Components/SmallCardRecipeCard.dart';
+import 'package:forked/Components/CardRecipeCard.dart';
 import 'package:get/get.dart';
 
 class Following extends StatelessWidget {
