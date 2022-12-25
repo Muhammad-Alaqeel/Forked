@@ -41,8 +41,8 @@ class User {
       savedRecipes: Recipe.fronJson(json['recipes']),
       likedRecipes: Recipe.fronJson(json['recipes']),
       // 
-      following: List<User>.from(json['following'].map((x) => x)),
-      followers: List<User>.from(json['followers'].map((x) => x)),
+      // following: List<User>.from(json['following'].map((x) => x)),
+      // followers: List<User>.from(json['followers'].map((x) => x)),
     );
   }
 }

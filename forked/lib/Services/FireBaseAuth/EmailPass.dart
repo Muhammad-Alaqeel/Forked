@@ -17,11 +17,12 @@ bool check=false;
 await FirebaseFirestore.instance
     .collection('users').
    where('userName', isEqualTo: username)
-    .get()
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
     .then((QuerySnapshot querySnapshot) {
-        querySnapshot.docs.forEach((doc) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
           check=true;
-        
+
         });
     });
     Get.snackbar("title", "$check");
@@ -71,3 +72,4 @@ print(inctence.currentUser?.uid);
     print("objekllklklkklklkllklkklkllkklklklklklklklkllkkllkct");
    }
 }
+
