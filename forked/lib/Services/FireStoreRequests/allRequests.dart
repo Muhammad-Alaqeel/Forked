@@ -130,6 +130,7 @@ UpdateUserProfile({String? userID, String? newProfile}) {
 
 createOriginalRecipe({
   String? imgPath,
+   String? recipeID,
   String? title,
   int? minutes,
   int? servings,
@@ -149,7 +150,9 @@ createOriginalRecipe({
 
 }
 
-createForkedRecipe({  String? imgPath,
+createForkedRecipe({  
+  String? imgPath,
+  String? recipeID,
   String? title,
   int? minutes,
   int? servings,
