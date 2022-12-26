@@ -40,7 +40,7 @@ Get.off(BNBart());
         Get.to(BNBart());
       }
     }
-  } catch (w) {
+  }} catch (w) {
     Get.snackbar("title", w.toString());
   }
 }
@@ -82,4 +82,4 @@ passwordReset({required String email}) async {
   } on FirebaseAuthException catch (e) {
     Get.snackbar("title", e.message.toString());
   }
-}}
+}
