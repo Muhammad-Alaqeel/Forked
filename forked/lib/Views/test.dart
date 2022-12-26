@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:forked/Components/picker.dart';
 import 'package:forked/Services/FireStoreRequests/RiecipeRequests.dart';
 import 'package:forked/Services/FireStoreRequests/UserRequests.dart';
+import 'package:forked/Services/FireStoreRequests/forkedRecipeRequests.dart';
 
 import '../Components/Recipeinfo.dart';
 
@@ -33,7 +34,7 @@ class test extends StatelessWidget {
               //     title: "pancake"
                   
               //     );
-              readUsersOriginalRecipies(userID: "123ikdjsdoiwjad2");
+              setForkedRecipe(userID: "123ikdjsdoiwjad2");
               
             },
             child: Text("data"))

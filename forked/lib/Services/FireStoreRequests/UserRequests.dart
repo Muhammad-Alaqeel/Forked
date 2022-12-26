@@ -45,13 +45,14 @@ return returned;
 
 }
 
-
-usersFollowersQuery({int? minNumOfFollowers})async{
+// this was changed from where, to orderBy
+usersFollowersQuery()async{
 
 List<user> mostFollowedUsers=[];
+try{
   await FirebaseFirestore.instance
     .collection('users').
-   where('followersNumber', isGreaterThanOrEqualTo: minNumOfFollowers ) // we need to change username to userName
+   orderBy('followersNumber', descending: false ) // we need to change username to userName
     .get() //Future<QuerySnapshot<Map<String, dynamic>>>
     .then((QuerySnapshot querySnapshot) {
       
@@ -66,5 +67,8 @@ for (var element in mostFollowedUsers) {
   print(element.followersNumber);
 
 }
+return mostFollowedUsers;
+}catch(err){
 
+}
 }

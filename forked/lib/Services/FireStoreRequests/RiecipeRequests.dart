@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:forked/Models/originalRecipie.dart';
 import 'package:get/get.dart';
-
 final db = FirebaseFirestore.instance;
 
 setRecipe(
@@ -75,9 +74,10 @@ return returned;
 readUsersOriginalRecipies({String? userID})async{
 
 List<originalRecipe> userRecipies=[];
+try{
   await FirebaseFirestore.instance
     .collection('recipes').
-   where('userID', isGreaterThanOrEqualTo: userID ) // we need to change username to userName
+   where('userID', isEqualTo: userID ) // we need to change username to userName
     .get() //Future<QuerySnapshot<Map<String, dynamic>>>
     .then((QuerySnapshot querySnapshot) {
       
@@ -90,6 +90,12 @@ userRecipies.add(originalRecipe.fronJson(doc.data() as Map<String, dynamic>));
 
 for (var element in userRecipies) {
 Get.snackbar("title", element.title.toString());
+}
+return userRecipies;
+}
+catch(err){
+  
+
 }
 
 }
