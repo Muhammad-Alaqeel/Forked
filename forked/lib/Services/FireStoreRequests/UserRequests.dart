@@ -34,17 +34,20 @@ readUserData({String? userID}) async {
   }
 }
 
-usersFollowersQuery({int? minNumOfFollowers}) async {
-  List<user> mostFollowedUsers = [];
+// this was changed from where, to orderBy
+usersFollowersQuery()async{
+
+List<user> mostFollowedUsers=[];
+try{
   await FirebaseFirestore.instance
-      .collection('users')
-      .where('followersNumber',
-          isGreaterThanOrEqualTo:
-              minNumOfFollowers) // we need to change username to userName
-      .get() //Future<QuerySnapshot<Map<String, dynamic>>>
-      .then((QuerySnapshot querySnapshot) {
-    querySnapshot.docs.forEach((doc) {
-      // QuerySnapshot<Object?>
+    .collection('users').
+   orderBy('followersNumber', descending: false ) // we need to change username to userName
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+    .then((QuerySnapshot querySnapshot) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
+       
+mostFollowedUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));  
 
       mostFollowedUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));
     });
@@ -53,4 +56,10 @@ usersFollowersQuery({int? minNumOfFollowers}) async {
   for (var element in mostFollowedUsers) {
     print(element.followersNumber);
   }
+return mostFollowedUsers;
+
+}catch(e){}
 }
+
+
+
