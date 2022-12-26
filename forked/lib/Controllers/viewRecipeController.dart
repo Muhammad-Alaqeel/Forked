@@ -4,7 +4,7 @@ import 'package:forked/Components/Camera.dart';
 import 'package:forked/Constants/styles.dart';
 import 'package:get/get.dart';
 
-import '../Components/SmallCardRecipeCard.dart';
+import '../Components/CardRecipeCard.dart';
 import '../Components/preparations_details.dart';
 
 class viewRecipeController extends GetxController{
@@ -60,6 +60,7 @@ update();
      child: Text("• ingredient", style: h4,),
    ),
  ];
+
 
 
 forks=[
