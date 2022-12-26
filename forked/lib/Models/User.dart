@@ -1,48 +1,36 @@
+import 'package:forked/Models/originalRecipie.dart';
 // import 'package:forked/Models/Recipie.dart';
 
 // i am not sure of how to handle arrays in factory, we need to check that ince we get the data
 
-class User {
-  int? id;
+class user {
+  String? userID;
   String? username;
   String? email;
   String? profile;
-  String? image;
-  // Recipe? originalRecipes;
-  // Recipe? forkedlRecipes;
-  // Recipe? savedRecipes;
-  // Recipe? likedRecipes;
-  List<User?>? following;
-  List<User?>? followers;
+  String? profileImage;
+  int? followingNumber;
+  int? followersNumber;
 
-  User(
-      {this.id,
+
+  user(
+      {this.userID,
       this.username,
       this.email,
       this.profile,
-      this.image,
-      // this.originalRecipes,
-      // this.forkedlRecipes,
-      // this.savedRecipes,
-      // this.likedRecipes,
-      this.following,
-      this.followers});
+      this.profileImage,
+      this.followingNumber,
+      this.followersNumber});
 
-  factory User.fronJson(Map json) {
-    return User(
-      id: json['id'],
+  factory user.fronJson(Map json) {
+    return user(
+      userID: json['userID'],
       username: json['username'],
       email: json['email'],
-      // recipes: Recipe.fronJson(json['recipes']),
       profile: json['profile'],
-      image: json['image'],
-      // originalRecipes: Recipe.fronJson(json['recipes']),
-      // forkedlRecipes: Recipe.fronJson(json['recipes']),
-      // savedRecipes: Recipe.fronJson(json['recipes']),
-      // likedRecipes: Recipe.fronJson(json['recipes']),
-      // 
-      // following: List<User>.from(json['following'].map((x) => x)),
-      // followers: List<User>.from(json['followers'].map((x) => x)),
+      profileImage: json['profileImage'],
+       followingNumber: json['followingNumber'],
+        followersNumber: json['followersNumber'],
     );
   }
 }

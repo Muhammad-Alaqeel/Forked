@@ -8,6 +8,7 @@ import 'package:forked/Views/Home.dart';
 import 'package:forked/Views/Profile.dart';
 import 'package:forked/Views/ViewRecipe.dart';
 import 'package:forked/Views/khuloudTest.dart';
+import 'package:forked/Views/test.dart';
 import 'package:forked/Views/testing.dart';
 
 import 'package:get/get.dart';
@@ -31,8 +32,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: NamedRoute.StratingPage,
-       getPages: appRoutes,
+      // initialRoute: NamedRoute.StratingPage,
+      //  getPages: appRoutes,
+
+
+
+      home: test(),
+
+//  home: createRecipe(
+
+// steps: [
+
+//   SizedBox(),
+//     SizedBox(),
 
 //   SizedBox(),
 
