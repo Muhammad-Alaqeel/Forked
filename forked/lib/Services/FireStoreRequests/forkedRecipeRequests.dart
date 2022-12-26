@@ -115,7 +115,7 @@ return userForkedRecipes;
 
 
 
-readAllforkedlRecipies()async{
+Future<List<forkedRecipe>>  readAllforkedlRecipies()async{
 
 List<forkedRecipe> allRecipies=[];
 try{
@@ -131,13 +131,14 @@ allRecipies.add(forkedRecipe.fronJson(doc.data() as Map<String, dynamic>));
         });
     });
 
-for (var element in allRecipies) {
-Get.snackbar("title", element.title.toString());
-}
+// for (var element in allRecipies) {
+// Get.snackbar("title", element.title.toString());
+// }
 return allRecipies;
 }
 catch(err){
   
+return allRecipies;
 
 }
 

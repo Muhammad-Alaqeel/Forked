@@ -77,3 +77,36 @@ Future<user> readUserData({String? userID}) async {
     return mostFollowedUsers;
   }
 }
+
+
+
+
+
+
+Future<List<user>>  readAllUsers()async{
+
+List<user> allUsers=[];
+try{
+  await FirebaseFirestore.instance
+    .collection('users')
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+    .then((QuerySnapshot querySnapshot) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
+       
+allUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));  
+
+        });
+    });
+
+// for (var element in allUsers) {
+// Get.snackbar("title", element.username.toString());
+// }
+return allUsers;
+}
+catch(err){return allUsers;
+  
+
+}
+
+}

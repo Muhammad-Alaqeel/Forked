@@ -114,7 +114,7 @@ return userRecipies;
 
 
 
-readAllOriginalRecipies()async{
+Future<List<originalRecipe>>  readAllOriginalRecipies()async{
 
 List<originalRecipe> allRecipies=[];
 try{
@@ -130,12 +130,12 @@ allRecipies.add(originalRecipe.fronJson(doc.data() as Map<String, dynamic>));
         });
     });
 
-for (var element in allRecipies) {
-Get.snackbar("title", element.title.toString());
-}
+// for (var element in allRecipies) {
+// Get.snackbar("title", element.title.toString());
+// }
 return allRecipies;
 }
-catch(err){
+catch(err){return allRecipies;
   
 
 }
