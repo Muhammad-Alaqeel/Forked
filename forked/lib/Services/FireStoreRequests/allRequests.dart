@@ -2,6 +2,7 @@
 // // create new document in the database with the id userID and email feild = to email
 // }
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:forked/Models/User.dart';
 import 'package:forked/Services/FireStoreRequests/RiecipeRequests.dart';
 
@@ -23,16 +24,31 @@ fetchUserData({String? userID}) async{
 
 }
 
-List<dynamic> searching({String? searchKey}) {
+searching({String? searchKey}) async {
   // we will yuse the key to look through the user documents and recipe documents
   // and we will return = [USELlIST, RecipeList];
+  var userList = await FirebaseFirestore.instance
+      .collection("user")
+      .where("username", isEqualTo: searchKey).get();
+  var recipe = await FirebaseFirestore.instance
+      .collection("recipes")
+      .where("title", isEqualTo: searchKey).get(); 
+  var ForkedRecipe = await FirebaseFirestore.instance
+      .collection("forkedRecipe")
+      .where("title", isEqualTo: searchKey).get();
+
+
+      
+           
+         
 
   return [];
 }
 
 
-
-List<dynamic> explorer() {
+//forkedRecipe Id
+List<dynamic> explorer(
+    {required String userID, required String recipeID, String? parentID}) {
   // return recipies where likes < 3 in both forked and original recipe;
 // list item details:
 //recipe title, image, likes, profileIMG, user name, useID, recipeID, and parentID for forked;
@@ -138,7 +154,7 @@ displayFolloweing({String? profileID}) {
 //done
 followOrUnfollowUser({String? currentUserID, String? someUser}) {
 // we will check if a document with the id userID_recipeID exist
-// if not we will follow it, if it does exist we will unfollow 
+// if not we will follow it, if it does exist we will unfollow
 }
 
 
@@ -152,7 +168,7 @@ UpdateUserProfile({String? userID, String? newProfile}) {
 //done
 createOriginalRecipe({
   String? imgPath,
-   String? recipeID,
+  String? recipeID,
   String? title,
   int? minutes,
   int? servings,
@@ -163,13 +179,8 @@ createOriginalRecipe({
   String? useId,
   String? userProfileImage,
   String? username,
-
 }) {
-
   // we should create ne document in recipies with user id
-
-
-
 }
 //done
 createForkedRecipe({  
@@ -187,10 +198,4 @@ createForkedRecipe({
   String? parentName,
   String? userProfileImage,
   String? username,
-}) {
-
-
-
-
-
-}
+}) {}

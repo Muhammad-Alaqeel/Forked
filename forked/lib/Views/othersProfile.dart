@@ -63,9 +63,11 @@ class Profile extends StatelessWidget {
               //follow button :
               // SizedBox(
               //   width: Get.width * .3,
-              //   child: myButton(
-              //     text: textButton,
-              //     backGroundColor: lightGreen,
+              //   child: InkWell(
+              //     child: myButton(
+              //       text: textButton,
+              //       backGroundColor: lightGreen,
+              //     ),
               //   ),
               // ),
 
