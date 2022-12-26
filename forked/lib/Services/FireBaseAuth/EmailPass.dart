@@ -15,15 +15,16 @@ createAccount(
     required username}) async {
   try {
     var firestore = FirebaseFirestore.instance;
-    bool check = false;
-    await FirebaseFirestore.instance
-        .collection('users')
-        .where('userName', isEqualTo: username)
-        .get()
-        .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        check = true;
-      });
+bool check=false;
+await FirebaseFirestore.instance
+    .collection('users').
+   where('userName', isEqualTo: username)
+    .get()
+    .then((QuerySnapshot querySnapshot) {
+        querySnapshot.docs.forEach((doc) {
+          check=true;
+        
+        });
     });
     Get.snackbar("title", "$check");
     if (check == false && password == rePassword) {
@@ -63,7 +64,6 @@ setEmail({required String email}) {
     print("objekllklklkklklkllklkklkllkklklklklklklklkllkkllkct");
   }
 }
-
 passwordReset({required String email}) async {
   try {
    await inctence.sendPasswordResetEmail(email: email);
