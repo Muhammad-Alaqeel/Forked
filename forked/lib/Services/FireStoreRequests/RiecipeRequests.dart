@@ -105,3 +105,39 @@ return userRecipies;
 }
 
 }
+
+
+
+
+
+
+
+
+
+readAllOriginalRecipies()async{
+
+List<originalRecipe> allRecipies=[];
+try{
+  await FirebaseFirestore.instance
+    .collection('recipes')
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+    .then((QuerySnapshot querySnapshot) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
+       
+allRecipies.add(originalRecipe.fronJson(doc.data() as Map<String, dynamic>));  
+
+        });
+    });
+
+for (var element in allRecipies) {
+Get.snackbar("title", element.title.toString());
+}
+return allRecipies;
+}
+catch(err){
+  
+
+}
+
+}

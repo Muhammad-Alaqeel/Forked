@@ -5,9 +5,10 @@ import 'package:forked/Components/picker.dart';
 import 'package:forked/Services/FireStoreRequests/RiecipeRequests.dart';
 import 'package:forked/Services/FireStoreRequests/UserRequests.dart';
 import 'package:forked/Services/FireStoreRequests/forkedRecipeRequests.dart';
+import 'package:forked/Services/FireStoreRequests/savedRecipeRequests.dart';
 
 import '../Components/Recipeinfo.dart';
-import '../Services/FireStoreRequests/followingRequests.dart';
+import '../Services/FireStoreRequests/likedRecipeRequests.dart';
 
 class test extends StatelessWidget {
   const test({super.key});
@@ -21,30 +22,26 @@ class test extends StatelessWidget {
       children: [
         ElevatedButton(
             onPressed: () {
-              // setRecipe(
-              //     userID: "123ikdjsdoiwjad2",
-              //     imgPath: "asdljalidjlaiwj",
-              //     userProfileImage: "awdjnqwkedij",
-              //     username: "wdlkijqwodi",
-              //     ingredients: "adjsqliwdj",
-              //     preperation: "laksdmlawkmdl",
-              //     calories: 12,
-              //     servings: 12222,
-              //     minutes: 22,
-              //     likes: 1213,
-              //     title: "pancake"
+              setForkedRecipe(
+                parentName: "pancake",
+                parentID: "12381293892831928391283",
+                  userID: "123ikdjsdoiwjad2",
+                  imgPath: "asdljalidjlaiwj",
+                  userProfileImage: "awdjnqwkedij",
+                  username: "wdlkijqwodi",
+                  ingredients: "adjsqliwdj",
+                  preperation: "laksdmlawkmdl",
+                  calories: 12,
+                  servings: 12222,
+                  minutes: 22,
+                  likes: 1213,
+                  title: "fried egg"
+                  
+                  );
+// readAllOriginalRecipies();
 
-              //     );
-              // createFollowing(
-              //     followedUserID: "ZIgU8UUkf8ZHMXqvJX9fcNnwaqU2",
-              //     userID: "VP6oWVUYPEcf8fuKKqxZnr31mCy2");
-              //readUsersFollowers(userID: "VP6oWVUYPEcf8fuKKqxZnr31mCy2");
-              // readUsersFollowing(userID: "VP6oWVUYPEcf8fuKKqxZnr31mCy2");
-              updateData(
-                  collection: "users",
-                  docoment: "VP6oWVUYPEcf8fuKKqxZnr31mCy2",
-                  fieldKey: "username",
-                  newValue: "amjad");
+              // setForkedRecipe(userID: "123ikdjsdoiwjad2");
+              
             },
             child: Text("data"))
       ],

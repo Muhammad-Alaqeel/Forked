@@ -58,7 +58,7 @@ userLikedRecipe.add(likedRecipe.fronJson(doc.data() as Map<String, dynamic>));
     });
 
 for (var element in userLikedRecipe) {
-Get.snackbar("title", element.userID.toString());
+Get.snackbar("title", element.recipeID.toString());
 }
 return userLikedRecipe;
 }catch(err){
