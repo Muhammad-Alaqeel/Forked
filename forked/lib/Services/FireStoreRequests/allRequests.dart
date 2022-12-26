@@ -5,9 +5,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:forked/Models/User.dart';
 import 'package:forked/Services/FireStoreRequests/RiecipeRequests.dart';
+import 'package:get/get.dart';
 
+import '../../Models/forkedRecipe.dart';
 import '../../Models/originalRecipie.dart';
 import 'UserRequests.dart';
+import 'forkedRecipeRequests.dart';
 
 fetchUserData({String? userID}) async{
 // we will get all the user information from the data base and store it
@@ -24,29 +27,8 @@ fetchUserData({String? userID}) async{
 
 }
 
-searching({String? searchKey}) async {
-  // we will yuse the key to look through the user documents and recipe documents
-  // and we will return = [USELlIST, RecipeList];
-  var userList = await FirebaseFirestore.instance
-      .collection("user")
-      .where("username", isEqualTo: searchKey).get();
-  var recipe = await FirebaseFirestore.instance
-      .collection("recipes")
-      .where("title", isEqualTo: searchKey).get(); 
-  var ForkedRecipe = await FirebaseFirestore.instance
-      .collection("forkedRecipe")
-      .where("title", isEqualTo: searchKey).get();
 
-
-      
-           
-         
-
-  return [];
-}
-
-
-//forkedRecipe Id
+//ready
 List<dynamic> explorer(
     {required String userID, required String recipeID, String? parentID}) {
   // return recipies where likes < 3 in both forked and original recipe;
@@ -199,3 +181,154 @@ createForkedRecipe({
   String? userProfileImage,
   String? username,
 }) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// seaaaaaarching
+
+  Future<List<user>> SsearchingInUsers({String? searchKey}) async {
+  // we will yuse the key to look through the user documents and recipe documents
+  // and we will return = [USELlIST, RecipeList];
+  List<user> userList = await readAllUsers();
+
+
+List<String> usersNames=[];
+
+
+for (var element in userList) {
+  usersNames.add(element.username!);
+}
+
+
+
+   List<user> finalUsers=[];
+    
+         
+for(var i=0;i<usersNames.length;i++){
+  if(usersNames[i].contains(searchKey!)){
+    finalUsers.add(userList[i]);
+  }
+}
+
+
+
+
+
+for (var element in finalUsers) {
+  Get.snackbar("user name", element.username!);
+}
+
+  return finalUsers;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Future<List<originalRecipe>> SsearchingInOriginal({String? searchKey}) async {
+  // we will yuse the key to look through the user documents and recipe documents
+  // and we will return = [USELlIST, RecipeList];
+  List<originalRecipe> originalRecipes =await readAllOriginalRecipies() ;
+     
+
+
+
+List<String> originalNames=[];
+
+for (var element in originalRecipes) {
+  originalNames.add(element.title!);
+}
+
+List<originalRecipe> finalOriginal=[];
+       
+
+
+
+for(var i=0;i<originalNames.length;i++){
+  if(originalNames[i].contains(searchKey!)){
+    finalOriginal.add(originalRecipes[i]);
+  }
+}
+
+
+
+
+for (var element in finalOriginal) {
+  Get.snackbar("original title", element.title!);
+}
+  return finalOriginal;
+}
+
+
+
+
+
+
+
+
+
+
+
+ Future<List<forkedRecipe>>   SsearchingInForked({String? searchKey}) async {
+  // we will yuse the key to look through the user documents and recipe documents
+  // and we will return = [USELlIST, RecipeList];
+
+     
+  List<forkedRecipe> ForkedRecipe = await readAllforkedlRecipies();
+
+List<String> forkedNames=[];
+
+
+
+
+for (var element in ForkedRecipe) {
+  forkedNames.add(element.title!);
+}
+
+
+List<forkedRecipe>  finalForked=[];        
+         
+
+
+for(var i=0;i<forkedNames.length;i++){
+  if(forkedNames[i].contains(searchKey!)){
+    print("entered");
+    finalForked.add(ForkedRecipe[i]);
+  }
+}
+
+
+
+
+
+for (var element in finalForked) {
+  Get.snackbar("forks title", element.title!);
+}
+  return finalForked;
+}
