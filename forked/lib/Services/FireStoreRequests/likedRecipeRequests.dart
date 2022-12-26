@@ -40,7 +40,7 @@ Get.snackbar("title", "error inside deleteLiked");
 
 
 
-readUsersLikedRecipies({String? userID})async{
+Future<List<likedRecipe>> readUsersLikedRecipies({String? userID})async{
 
 List<likedRecipe> userLikedRecipe=[];
 try{
@@ -62,6 +62,7 @@ Get.snackbar("title", element.userID.toString());
 }
 return userLikedRecipe;
 }catch(err){
+return userLikedRecipe;
 
 }
 }

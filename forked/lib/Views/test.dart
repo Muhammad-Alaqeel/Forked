@@ -7,6 +7,7 @@ import 'package:forked/Services/FireStoreRequests/UserRequests.dart';
 import 'package:forked/Services/FireStoreRequests/forkedRecipeRequests.dart';
 
 import '../Components/Recipeinfo.dart';
+import '../Services/FireStoreRequests/followingRequests.dart';
 
 class test extends StatelessWidget {
   const test({super.key});
@@ -32,10 +33,18 @@ class test extends StatelessWidget {
               //     minutes: 22,
               //     likes: 1213,
               //     title: "pancake"
-                  
+
               //     );
-              setForkedRecipe(userID: "123ikdjsdoiwjad2");
-              
+              // createFollowing(
+              //     followedUserID: "ZIgU8UUkf8ZHMXqvJX9fcNnwaqU2",
+              //     userID: "VP6oWVUYPEcf8fuKKqxZnr31mCy2");
+              //readUsersFollowers(userID: "VP6oWVUYPEcf8fuKKqxZnr31mCy2");
+              // readUsersFollowing(userID: "VP6oWVUYPEcf8fuKKqxZnr31mCy2");
+              updateData(
+                  collection: "users",
+                  docoment: "VP6oWVUYPEcf8fuKKqxZnr31mCy2",
+                  fieldKey: "username",
+                  newValue: "amjad");
             },
             child: Text("data"))
       ],

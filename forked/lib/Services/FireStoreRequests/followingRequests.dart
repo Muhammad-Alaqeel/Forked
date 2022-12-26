@@ -40,7 +40,7 @@ Get.snackbar("title", "error inside deleteFollowing");
 
 
 
-readUsersFollowing({String? userID})async{
+Future<List<following>> readUsersFollowing({String? userID})async{
 
 List<following> userFollowing=[];
 try{
@@ -61,12 +61,15 @@ for (var element in userFollowing) {
 Get.snackbar("title", element.followedUserID.toString());
 }
 return userFollowing;
-}catch(err){}
+}catch(err){
+return userFollowing;
+
+}
 }
 
 
 
-readUsersFollowers({String? userID})async{
+Future<List<following>> readUsersFollowers({String? userID})async{
 
 List<following> userFollowers=[];
 
@@ -87,8 +90,10 @@ userFollowers.add(following.fronJson(doc.data() as Map<String, dynamic>));
 for (var element in userFollowers) {
 Get.snackbar("title", element.followedUserID.toString());
 }
-return userFollowers;}
+return userFollowers;
+}
 catch(err){
+return userFollowers;
 
 
 }

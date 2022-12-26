@@ -4,6 +4,19 @@ import 'package:get/get.dart';
 
 final db = FirebaseFirestore.instance;
 
+updateData(
+    {required String collection,
+    required String docoment,
+    required String fieldKey,
+    required String newValue}) async {
+  try {
+    await db.collection(collection).doc(docoment).update({fieldKey: newValue});
+    Get.snackbar("SUCCESS", "Successfully update");
+  } catch (e) {
+    Get.snackbar("ERROR", "An error ocur");
+  }
+}
+
 setUser({required String email, required String id, String? username}) async {
   // User appt =
   //     User(userID: id, email: email);
@@ -17,7 +30,7 @@ setUser({required String email, required String id, String? username}) async {
   }
 }
 
-readUserData({String? userID}) async {
+Future<user> readUserData({String? userID}) async {
   user returned = user();
 
   try {
@@ -31,35 +44,36 @@ readUserData({String? userID}) async {
     return returned;
   } catch (err) {
     Get.snackbar("title", "readUser");
+    return returned;
   }
 }
 
 // this was changed from where, to orderBy
-usersFollowersQuery()async{
+ Future<List<user>> usersFollowersQuery() async {
+  List<user> mostFollowedUsers = [];
+  try {
+    await FirebaseFirestore.instance
+        .collection('users')
+        .orderBy('followersNumber',
+            descending: false) // we need to change username to userName
+        .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+        .then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        // QuerySnapshot<Object?>
 
-List<user> mostFollowedUsers=[];
-try{
-  await FirebaseFirestore.instance
-    .collection('users').
-   orderBy('followersNumber', descending: false ) // we need to change username to userName
-    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
-    .then((QuerySnapshot querySnapshot) {
-      
-        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
-       
-mostFollowedUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));  
+        mostFollowedUsers
+            .add(user.fronJson(doc.data() as Map<String, dynamic>));
 
-      mostFollowedUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));
+        mostFollowedUsers
+            .add(user.fronJson(doc.data() as Map<String, dynamic>));
+      });
     });
-  });
 
-  for (var element in mostFollowedUsers) {
-    print(element.followersNumber);
+    for (var element in mostFollowedUsers) {
+      print(element.followersNumber);
+    }
+    return mostFollowedUsers;
+  } catch (e) {
+    return mostFollowedUsers;
   }
-return mostFollowedUsers;
-
-}catch(e){}
 }
-
-
-
