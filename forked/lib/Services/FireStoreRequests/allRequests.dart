@@ -1,8 +1,14 @@
-setNewUser({String? userID, String? email}) {
-// create new document in the database with the id userID and email feild = to email
-}
+// setNewUser({String? userID, String? email}) {
+// // create new document in the database with the id userID and email feild = to email
+// }
 
-fetchUserData({String? userID}) {
+import 'package:forked/Models/User.dart';
+import 'package:forked/Services/FireStoreRequests/RiecipeRequests.dart';
+
+import '../../Models/originalRecipie.dart';
+import 'UserRequests.dart';
+
+fetchUserData({String? userID}) async{
 // we will get all the user information from the data base and store it
 // this is not just a request for user collection, we will do multiple queries
 //1- user dara
@@ -12,6 +18,9 @@ fetchUserData({String? userID}) {
 // user saved recipe
 // following
 // followers
+  user myUserData =  await readUserData(userID: userID);
+  List<originalRecipe>   userOriginalRecipies =await readUsersOriginalRecipies(userID: userID);
+
 }
 
 List<dynamic> searching({String? searchKey}) {
@@ -21,14 +30,7 @@ List<dynamic> searching({String? searchKey}) {
   return [];
 }
 
-List<dynamic> dailyInspiratoin() {
-  // return recipies where likes > 3 in both forked and original recipe;
-// list item details:
-//recipe title, image, likes, profileIMG, user name, useID, recipeID, and parentID for forked;
 
-// when creating the forked Widget make sure to pass an atribute (parentID) that tell wether the recipe is forked or not
-  return ["forkedRecipeies", "originaalRecipe"];
-}
 
 List<dynamic> explorer() {
   // return recipies where likes < 3 in both forked and original recipe;
@@ -36,15 +38,18 @@ List<dynamic> explorer() {
 //recipe title, image, likes, profileIMG, user name, useID, recipeID, and parentID for forked;
 
 // when creating the forked Widget make sure to pass an atribute (parentID) that tell wether the recipe is forked or not
+
+
   return ["forkedRecipeies", "originaalRecipe"];
 }
-
+// done
 List<dynamic> mostFollowed() {
   // return recipies where followers > 3;
   // profile image, name , followers;, id;
   return [];
 }
 
+//not ready
 List<dynamic> FollowingRecipies({List<String>? followingIDs}) {
   // we will use the list of a ll the users that we followe to aquire their recipies
   // by using the (in) ley word in the query
@@ -57,6 +62,7 @@ List<dynamic> FollowingRecipies({List<String>? followingIDs}) {
 }
 
 // we could merge viewOriginalReicipe with view forked recipies method
+//done
 List<dynamic> viewOriginalRecipe(
     {String? recipieDocId,
     int? displayedLikes,
@@ -71,6 +77,7 @@ List<dynamic> viewOriginalRecipe(
 }
 
 // we could merge viewOriginalReicipe with view forked recipies method
+//done
 List<dynamic> viewForkedRecipe(
     {String? recipieDocId,
     int? displayedLikes,
@@ -84,16 +91,21 @@ List<dynamic> viewForkedRecipe(
   return ["forked recipe info", "forks"];
 }
 
+// done
 saveOrDeleteRecipe({String? recipeID, String? userID}) {
 // we will check if a document with the id userID_recipeID exist
 // if not we will add it, if it does exist we will delete it
 }
 
+
+// done
 likeOrUnlikeRecipe({String? recipeID, String? userID}) {
 // we will check if a document with the id userID_recipeID exist
 // if not we will add it, if it does exist we will delete it
 }
 
+
+//ready
 List<dynamic> viewOthersProfile({String? profileID, int? displayedFollowers}) {
   // we will return thre items:
   // 1- original recipe
@@ -105,6 +117,7 @@ List<dynamic> viewOthersProfile({String? profileID, int? displayedFollowers}) {
   return ["user data", " forks", "originals"];
 }
 
+//done
 displayFollowers({String? profileID}) {
   // we will look throu the following collection
   // perform a query where userFollowed = profileID
@@ -112,6 +125,8 @@ displayFollowers({String? profileID}) {
   return ["users"];
 }
 
+
+//done
 displayFolloweing({String? profileID}) {
   // we will look throu the following collection
   // perform a query where userFollowing = profileID
@@ -119,15 +134,22 @@ displayFolloweing({String? profileID}) {
   return ["users"];
 }
 
+
+//done
 followOrUnfollowUser({String? currentUserID, String? someUser}) {
 // we will check if a document with the id userID_recipeID exist
 // if not we will follow it, if it does exist we will unfollow 
 }
 
+
+//not ready
 UpdateUserProfile({String? userID, String? newProfile}) {
+  // we also need to update image
 // we will user profile with newProfile
 }
 
+
+//done
 createOriginalRecipe({
   String? imgPath,
    String? recipeID,
@@ -149,7 +171,7 @@ createOriginalRecipe({
 
 
 }
-
+//done
 createForkedRecipe({  
   String? imgPath,
   String? recipeID,

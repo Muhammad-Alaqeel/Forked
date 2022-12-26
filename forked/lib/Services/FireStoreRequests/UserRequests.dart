@@ -25,7 +25,7 @@ Get.snackbar("title", "error inside SETuSER");
 }
 
 
-readUserData({String? userID})async{
+Future<user> readUserData({String? userID})async{
 user returned=user();
 
  try{ 
@@ -41,7 +41,9 @@ Get.snackbar("title", "trueee");  // ...
 return returned;
 
 
- }catch(err){Get.snackbar("title", "readUser");}
+ }catch(err){Get.snackbar("title", "readUser");
+ return returned;
+ }
 
 }
 

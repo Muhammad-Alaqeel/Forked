@@ -103,3 +103,36 @@ return userForkedRecipes;
 
 }
 }
+
+
+
+
+
+
+readAllforkedlRecipies()async{
+
+List<forkedRecipe> allRecipies=[];
+try{
+  await FirebaseFirestore.instance
+    .collection('forkedRecipe')
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+    .then((QuerySnapshot querySnapshot) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
+       
+allRecipies.add(forkedRecipe.fronJson(doc.data() as Map<String, dynamic>));  
+
+        });
+    });
+
+for (var element in allRecipies) {
+Get.snackbar("title", element.title.toString());
+}
+return allRecipies;
+}
+catch(err){
+  
+
+}
+
+}
