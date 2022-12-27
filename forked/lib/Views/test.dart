@@ -23,7 +23,38 @@ class test extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Icon(Icons.abc_rounded),
+        Container(
+          height: 600,
+                            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*.02),
+                            child: GridView.builder(
+                              itemCount: 12,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: .8
+                            
+                            ), itemBuilder: (context, index){
+                            
+                              return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: ConstrainedBox(
+      constraints: BoxConstraints(
+      //   minWidth: Get.width*.5,
+        // minHeight: Get.height*.45,
+      //   maxHeight: Get.height*.46,
+      //  maxWidth: Get.width*.51,
+
+      ),
+        child: SmallCardRecipeCard(
+          recipeName: "pancake",
+          recipeImage: "images/6.jpg",
+          userName:
+              "amjad saleh aldubayan ",
+          ImageFunct: () {},
+        ),
+      ),
+    );
+                            }),
+                          ),
         ElevatedButton(
             onPressed: () async {
               //  await   setForkedRecipe(
