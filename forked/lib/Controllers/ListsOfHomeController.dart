@@ -9,6 +9,7 @@ class ListsOfHomeController extends GetxController {
   List<Widget> mostPopularList = [];
   List<Widget> followingList = [];
   List<Widget> exploreList = [];
+  
 
   @override
   void onInit() {
@@ -22,23 +23,23 @@ class ListsOfHomeController extends GetxController {
     }
   }
 
+
   addInDaliyInspirationList() {
     daliyInspirationList.add(Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: ConstrainedBox(
-      constraints: BoxConstraints(
-        minWidth: Get.width*.5,
-        minHeight: Get.height*.45,
-        maxHeight: Get.height*.46,
-       maxWidth: Get.width*.51,
-
-      ),
+        constraints: BoxConstraints(
+          minWidth: Get.width * .5,
+          minHeight: Get.height * .45,
+          maxHeight: Get.height * .46,
+          maxWidth: Get.width * .51,
+        ),
         child: SmallCardRecipeCard(
           recipeName: "pancake",
           recipeImage: "images/6.jpg",
-          userName:
-              "amjad saleh aldubayan ",
-          funct: () {},
+          userName: "amjad saleh aldubayan ",
+          ImageFunct: () {},
+          accontFunct: () {},
         ),
       ),
     ));
@@ -63,7 +64,7 @@ class ListsOfHomeController extends GetxController {
       child: SmallCardRecipeCard(
         recipeName: "pancake",
         userName: "",
-        funct: () {},
+        ImageFunct: () {},
       ),
     ));
   }
@@ -75,7 +76,7 @@ class ListsOfHomeController extends GetxController {
       child: SmallCardRecipeCard(
         recipeName: "pancake",
         userName: "",
-        funct: () {},
+        ImageFunct: () {},
       ),
     ));
   }

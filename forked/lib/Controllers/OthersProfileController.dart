@@ -1,17 +1,19 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:forked/Components/CardRecipeCard.dart';
 import 'package:get/get.dart';
 
-class ProfileController extends GetxController {
+class OthersProfileController extends GetxController {
   List<Widget>? userRecipes = [];
   List<Widget> userInnovations = [];
   List<Widget> userSaved = [];
   int? currentIndex = 0;
+  bool isFollow = true;
 
   setIndex({required int index}) {
     currentIndex = index;
     update();
   }
+
 
   @override
   void onInit() {
@@ -53,45 +55,34 @@ class ProfileController extends GetxController {
 
     //userSaved list :
     userSaved = [
-      Container(
-        padding: EdgeInsets.all(5),
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        height: Get.height * .3,
-        width: Get.width * .4,
-        child: SmallCardRecipeCard(
-          recipeName: "pancake",
-          recipeImage: "images/6.jpg",
-          ImageFunct: () {},
-        ),
+      Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                height: Get.height * .3,
+                width: Get.width * .4,
+                child: SmallCardRecipeCard(
+                  recipeName: "pancake",
+                  recipeImage: "images/6.jpg",
+                  ImageFunct: () {},
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                height: Get.height * .3,
+                width: Get.width * .4,
+                child: SmallCardRecipeCard(
+                  recipeName: "pancake",
+                  recipeImage: "images/6.jpg",
+                  ImageFunct: () {},
+                ),
+              ),
+            ],
+          )
+        ],
       )
-      // Column(
-      //   children: [
-      //     Row(
-      //       children: [
-      //         Container(
-      //           margin: EdgeInsets.symmetric(horizontal: 10),
-      //           height: Get.height * .3,
-      //           width: Get.width * .4,
-      //           child: SmallCardRecipeCard(
-      //             recipeName: "pancake",
-      //             recipeImage: "images/6.jpg",
-      //             ImageFunct: () {},
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: EdgeInsets.symmetric(horizontal: 10),
-      //           height: Get.height * .3,
-      //           width: Get.width * .4,
-      //           child: SmallCardRecipeCard(
-      //             recipeName: "pancake",
-      //             recipeImage: "images/6.jpg",
-      //             ImageFunct: () {},
-      //           ),
-      //         ),
-      //       ],
-      //     )
-      //   ],
-      // )
     ];
 
     //userInnovations list :

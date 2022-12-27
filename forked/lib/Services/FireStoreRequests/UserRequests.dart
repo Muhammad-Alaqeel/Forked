@@ -49,7 +49,7 @@ Future<user> readUserData({String? userID}) async {
 }
 
 // this was changed from where, to orderBy
- Future<List<user>> usersFollowersQuery() async {
+Future<List<user>> usersFollowersQuery() async {
   List<user> mostFollowedUsers = [];
   try {
     await FirebaseFirestore.instance
@@ -60,9 +60,6 @@ Future<user> readUserData({String? userID}) async {
         .then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
         // QuerySnapshot<Object?>
-
-        mostFollowedUsers
-            .add(user.fronJson(doc.data() as Map<String, dynamic>));
 
         mostFollowedUsers
             .add(user.fronJson(doc.data() as Map<String, dynamic>));
@@ -78,35 +75,25 @@ Future<user> readUserData({String? userID}) async {
   }
 }
 
+Future<List<user>> readAllUsers() async {
+  List<user> allUsers = [];
+  try {
+    await FirebaseFirestore.instance
+        .collection('users')
+        .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+        .then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        // QuerySnapshot<Object?>
 
-
-
-
-
-Future<List<user>>  readAllUsers()async{
-
-List<user> allUsers=[];
-try{
-  await FirebaseFirestore.instance
-    .collection('users')
-    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
-    .then((QuerySnapshot querySnapshot) {
-      
-        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
-       
-allUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));  
-
-        });
+        allUsers.add(user.fronJson(doc.data() as Map<String, dynamic>));
+      });
     });
 
 // for (var element in allUsers) {
 // Get.snackbar("title", element.username.toString());
 // }
-return allUsers;
-}
-catch(err){return allUsers;
-  
-
-}
-
+    return allUsers;
+  } catch (err) {
+    return allUsers;
+  }
 }

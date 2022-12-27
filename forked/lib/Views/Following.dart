@@ -17,7 +17,7 @@ class Following extends StatelessWidget {
           child: SmallCardRecipeCard(
             recipeName: "pancake",
             userName: "muhammed alaqeel",
-            funct: () {},
+            ImageFunct: () {},
            
           ),
         )

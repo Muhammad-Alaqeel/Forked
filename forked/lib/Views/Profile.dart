@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:forked/Components/CustomButton.dart';
+import 'package:forked/Components/FollowAndUnfollow.dart';
 import 'package:forked/Components/followcomp.dart';
 import 'package:forked/Components/picker.dart';
 import 'package:forked/Constants/styles.dart';
@@ -59,15 +60,6 @@ class Profile extends StatelessWidget {
                   ),
                 ),
               ),
-
-              //follow button :
-              // SizedBox(
-              //   width: Get.width * .3,
-              //   child: myButton(
-              //     text: textButton,
-              //     backGroundColor: lightGreen,
-              //   ),
-              // ),
 
               SizedBox(
                 height: 5,
@@ -135,12 +127,19 @@ class Profile extends StatelessWidget {
 
                         //List of saved recipes :
                         profileController.currentIndex == 1
-                            ? Padding(
-                                padding: EdgeInsets.all(0),
-                                child: Column(
-                                  children: profileController.userSaved,
-                                ),
-                              )
+                            ? Container(
+                              height: 600,
+                              child: GridView.count(
+                                crossAxisCount: 2,
+                              children: profileController.userSaved,
+                              ),
+                            )
+                            // Padding(
+                            //     padding: EdgeInsets.all(0),
+                            //     child: Column(
+                            //       children: profileController.userSaved,
+                            //     ),
+                            //   )
                             : SizedBox(),
 
                         //List of user innovation :
