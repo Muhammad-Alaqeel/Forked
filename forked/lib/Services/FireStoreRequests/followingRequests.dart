@@ -12,7 +12,8 @@ createFollowing({required String followedUserID,required String userID}) async {
 try{
 
 
-  await db.collection('following').doc("${userID}_${followedUserID}").set({"userID":userID, "followedUserID":followedUserID});
+  await db.collection('following').doc("${userID}_$followedUserID").set({"userID":userID, "followedUserID":followedUserID});
+Get.snackbar("title", " inside createfollowing");
 
 }catch(err){
 Get.snackbar("title", "error inside createfollowing");
