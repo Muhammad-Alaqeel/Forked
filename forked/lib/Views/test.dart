@@ -7,7 +7,9 @@ import 'package:forked/Services/FireStoreRequests/UserRequests.dart';
 import 'package:forked/Services/FireStoreRequests/allRequests.dart';
 import 'package:forked/Services/FireStoreRequests/forkedRecipeRequests.dart';
 import 'package:forked/Services/FireStoreRequests/savedRecipeRequests.dart';
+import 'package:get/get.dart';
 
+import '../Components/CardRecipeCard.dart';
 import '../Components/Recipeinfo.dart';
 import '../Services/FireStoreRequests/likedRecipeRequests.dart';
 
