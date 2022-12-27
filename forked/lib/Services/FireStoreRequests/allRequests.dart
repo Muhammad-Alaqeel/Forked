@@ -18,6 +18,7 @@ import '../../Models/originalRecipie.dart';
 import '../../Models/savedRecipe.dart';
 import 'UserRequests.dart';
 import 'forkedRecipeRequests.dart';
+final db = FirebaseFirestore.instance;
 
 fetchUserData({String? userID}) async {
 // we will get all the user information from the data base and store it
@@ -63,15 +64,40 @@ List<dynamic> mostFollowed() {
 }
 
 //not ready
-List<dynamic> FollowingRecipies({List<String>? followingIDs}) {
+Future<List<forkedRecipe>> FollowingRecipies({List<String>? followingIDs}) async{
   // we will use the list of a ll the users that we followe to aquire their recipies
+
   // by using the (in) ley word in the query
+  List<forkedRecipe> usersRecipies=[];
+
+  try{
+
+ await FirebaseFirestore.instance
+    .collection('forkedRecipe').
+   where('userID',  whereIn : followingIDs ) // we need to change username to userName
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+    .then((QuerySnapshot querySnapshot) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
+       
+usersRecipies.add(forkedRecipe.fronJson(doc.data() as Map<String, dynamic>));  
+
+        });
+    });
+    for (var element in usersRecipies) {
+      Get.snackbar("title", element.title.toString());
+    }
+    return usersRecipies;
+    }catch(err){
+return [];
+    }
+
   //for testing we will limit the floowingIDs to only 10 users
 
   //recipe title, image, likes, profileIMG, user name, useID, recipeID, and parentID for forked;
 
 // when creating the forked Widget make sure to pass an atribute (parentID) that tell wether the recipe is forked or not
-  return ["forkedRecipeies", "originaalRecipe"];
+
 }
 
 // we could merge viewOriginalReicipe with view forked recipies method
