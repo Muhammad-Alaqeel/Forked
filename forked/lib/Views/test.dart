@@ -22,28 +22,29 @@ class test extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ElevatedButton(
-            onPressed: () {
-              // setForkedRecipe(
-              //   parentName: "pancake",
-              //   parentID: "12381293892831928391283",
-              //     userID: "123ikdjsdoiwjad2",
-              //     imgPath: "asdljalidjlaiwj",
-              //     userProfileImage: "awdjnqwkedij",
-              //     username: "wdlkijqwodi",
-              //     ingredients: "adjsqliwdj",
-              //     preperation: "laksdmlawkmdl",
-              //     calories: 12,
-              //     servings: 12222,
-              //     minutes: 22,
-              //     likes: 1213,
-              //     title: "muhammed"
+            onPressed: () async{
+          //  await   setForkedRecipe(
+          //       parentName: "pancake",
+          //       parentID: "12381293892831928391283",
+          //         userID: "55",
+          //         imgPath: "asdljalidjlaiwj",
+          //         userProfileImage: "awdjnqwkedij",
+          //         username: "wdlkijqwodi",
+          //         ingredients: "adjsqliwdj",
+          //         preperation: "laksdmlawkmdl",
+          //         calories: 12,
+          //         servings: 12222,
+          //         minutes: 22,
+          //         likes: 1213,
+          //         title: "muhammed"
                   
-              //     );
+          //         );
+          FollowingRecipies(followingIDs: ["32456789087654324","123ikdjsdoiwjad2"]);
 // readAllOriginalRecipies();
 
-SsearchingInForked(searchKey: "am");
-SsearchingInOriginal(searchKey: "am");
-SsearchingInUsers(searchKey: "am");
+// SsearchingInForked(searchKey: "am");
+// SsearchingInOriginal(searchKey: "am");
+// SsearchingInUsers(searchKey: "am");
 
 
               // setForkedRecipe(userID: "123ikdjsdoiwjad2");
