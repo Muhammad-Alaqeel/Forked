@@ -9,7 +9,9 @@ class SmallCardRecipeCard extends StatelessWidget {
       required this.recipeName,
       this.recipeLikeCount,
       this.userName,
-      this.funct,
+      this.ImageFunct,
+      this.accontFunct,
+      this.likeFunct,
       this.userAvatar,
       this.recipeImage}) {
     if (recipeImage == null) recipeImage = defaultImage;
@@ -21,7 +23,7 @@ class SmallCardRecipeCard extends StatelessWidget {
   int? recipeLikeCount;
   var userName;
   var userAvatar;
-  Function()? funct;
+  Function()? ImageFunct, accontFunct, likeFunct;
 
   double WidthVar = Get.width * (190 / 393);
   double heightVar = Get.height * (330 / 852);
@@ -42,22 +44,19 @@ class SmallCardRecipeCard extends StatelessWidget {
                 // Expanded(child: Container()),
                 Expanded(
                   flex: 6,
-                  child: InkWell(
-                    onTap: funct,
-                    child: FractionallySizedBox(
-                      widthFactor: 1,
-                      child: Container(
-                        // height: heightVar -10,
-                        //width: WidthVar,
-                        // color: Colors.amber,
-                        child: FittedBox(
-                          child: Material(
-                            child: InkWell(
-                                onTap: funct,
-                                child: Image.asset(recipeImage!)),
-                          ),
-                          fit: BoxFit.fill,
+                  child: FractionallySizedBox(
+                    widthFactor: 1,
+                    child: Container(
+                      // height: heightVar -10,
+                      //width: WidthVar,
+                      // color: Colors.amber,
+                      child: FittedBox(
+                        child: Material(
+                          child: InkWell(
+                              onTap: ImageFunct,
+                              child: Image.asset(recipeImage!)),
                         ),
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -88,6 +87,8 @@ class SmallCardRecipeCard extends StatelessWidget {
                         child: LikeButton(
                           size: 24,
                           likeCount: recipeLikeCount,
+                          //onTap: likeFunct,
+                          
                         ),
                       ),
                     ),
@@ -97,37 +98,43 @@ class SmallCardRecipeCard extends StatelessWidget {
                         ? SizedBox()
                         : Container(
                             //color: Colors.green,
-                            child: Row(
-                              children: [
-                                //-----------------------avatar---------------------------------
-                                FittedBox(
-                                    fit: BoxFit.contain,
-                                    child: Container(
-                                      height: 23,
-                                      width: 23,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: FittedBox(
-                                        child: Image.asset(userAvatar),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    )),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Container(
-                                  height: 50,
-                                  width: 80,
-                                  child: Center(
-                                    child: Text(
-                                      userName,
-                                      style: h4,
-                                      overflow: TextOverflow.ellipsis,
+                            child: InkWell(
+                              onTap: accontFunct,
+                              child: Container(
+                                child: Row(
+                                  children: [
+                                    //-----------------------avatar---------------------------------
+                                    FittedBox(
+                                        fit: BoxFit.contain,
+                                        child: Container(
+                                          height: 23,
+                                          width: 23,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: FittedBox(
+                                            child: Image.asset(userAvatar),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        )),
+                                    SizedBox(
+                                      width: 5,
                                     ),
-                                  ),
-                                )
-                              ],
+                                    Container(
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          userName,
+                                          style: h4,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
                           )
                   ],

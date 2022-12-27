@@ -8,12 +8,14 @@ import 'package:forked/Views/Home.dart';
 import 'package:forked/Views/Profile.dart';
 import 'package:forked/Views/ViewRecipe.dart';
 import 'package:forked/Views/khuloudTest.dart';
+import 'package:forked/Views/othersProfile.dart';
 import 'package:forked/Views/test.dart';
 import 'package:forked/Views/testing.dart';
 
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'package:forked/Views/RegistrationNav.dart';
+import 'Components/FollowAndUnfollow.dart';
 import 'firebase_options.dart';
 
 main()async {
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
 
 
 
-      home: Home(),
+      home:Home(),
 
 //  home: createRecipe(
 

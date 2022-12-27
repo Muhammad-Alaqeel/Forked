@@ -8,6 +8,9 @@ import 'package:forked/Models/following.dart';
 import 'package:forked/Models/forkedRecipe.dart';
 import 'package:forked/Models/likedRecipe.dart';
 import 'package:forked/Services/FireStoreRequests/RiecipeRequests.dart';
+import 'package:forked/Services/FireStoreRequests/followingRequests.dart';
+import 'package:forked/Services/FireStoreRequests/likedRecipeRequests.dart';
+import 'package:forked/Services/FireStoreRequests/savedRecipeRequests.dart';
 import 'package:get/get.dart';
 
 import '../../Models/forkedRecipe.dart';
@@ -124,9 +127,7 @@ Future <List<dynamic>> viewOthersProfile({String? profileID, int? displayedFollo
   user myUserData = await readUserData(userID: profileID);
   List<originalRecipe> userOriginalRecipies =await readUsersOriginalRecipies(userID: profileID);
   forkedRecipe userForkedRecipeRecipies =await readForkedRecipeData(recipeID: profileID);
-   if ( ) {
-     
-   }
+
 
   return ["user data", " forks", "originals"];
 }

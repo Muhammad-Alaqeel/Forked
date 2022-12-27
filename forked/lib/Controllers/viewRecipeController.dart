@@ -75,7 +75,7 @@ forks=[
       child: SmallCardRecipeCard(
         recipeName: "pancake",
         recipeImage: "images/6.jpg",
-        funct: () {},
+        ImageFunct: () {},
       ),
     )
         ],
@@ -89,7 +89,7 @@ forks=[
       child: SmallCardRecipeCard(
         recipeName: "pancake",
         recipeImage: "images/6.jpg",
-        funct: () {},
+        ImageFunct: () {},
       ),
     ),
     Container(
@@ -98,7 +98,7 @@ forks=[
       child: SmallCardRecipeCard(
         recipeName: "pancake",
         recipeImage: "images/6.jpg",
-        funct: () {},
+        ImageFunct: () {},
       ),
     )
         ],

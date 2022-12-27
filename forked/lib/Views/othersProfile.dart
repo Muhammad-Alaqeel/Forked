@@ -9,12 +9,14 @@ import 'package:forked/Controllers/ProfileController.dart';
 import 'package:get/get.dart';
 
 import '../Components/AppBar.dart';
+import '../Components/FollowAndUnfollow.dart';
+import '../Controllers/OthersProfileController.dart';
 
-class Profile extends StatelessWidget {
-  Profile({
+class othersProfile extends StatelessWidget {
+  othersProfile({
     super.key,
   });
-  ProfileController profileController = Get.put(ProfileController());
+  OthersProfileController profileController = Get.put(OthersProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -61,16 +63,8 @@ class Profile extends StatelessWidget {
               ),
 
               //follow button :
-              // SizedBox(
-              //   width: Get.width * .3,
-              //   child: InkWell(
-              //     child: myButton(
-              //       text: textButton,
-              //       backGroundColor: lightGreen,
-              //     ),
-              //   ),
-              // ),
-
+              FollowAndUnfollow(),
+              
               SizedBox(
                 height: 5,
               ),
@@ -100,7 +94,7 @@ class Profile extends StatelessWidget {
               ),
 
               //picker :
-              GetBuilder<ProfileController>(builder: (builder) {
+              GetBuilder<OthersProfileController>(builder: (builder) {
                 return picker(
                   first: "Recipes",
                   second: "Saved",
@@ -122,7 +116,7 @@ class Profile extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  child: GetBuilder<ProfileController>(builder: (builder) {
+                  child: GetBuilder<OthersProfileController>(builder: (builder) {
                     return ListView(
                       children: [
                         //List of user recipes :
