@@ -60,10 +60,10 @@ Future<List<user>> usersFollowersQuery() async {
         .then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
         // QuerySnapshot<Object?>
-
         mostFollowedUsers
             .add(user.fronJson(doc.data() as Map<String, dynamic>));
       });
+
     });
 
     for (var element in mostFollowedUsers) {

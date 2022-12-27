@@ -49,12 +49,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // initialRoute: NamedRoute.StratingPage,
-      //  getPages: appRoutes,
+      initialRoute: NamedRoute.StratingPage,
+       getPages: appRoutes,
 
 
 
-      home:test(),
+        // home:Home(),
 
 //  home: createRecipe(
 

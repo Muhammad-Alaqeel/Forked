@@ -63,8 +63,8 @@ List<dynamic> mostFollowed() {
   return [];
 }
 
-//not ready
-Future<List<forkedRecipe>> FollowingRecipies({List<String>? followingIDs}) async{
+//not ready+___+
+Future<List<forkedRecipe>> FollowingForkedRecipies({List<String>? followingIDs}) async{
   // we will use the list of a ll the users that we followe to aquire their recipies
 
   // by using the (in) ley word in the query
@@ -73,7 +73,7 @@ Future<List<forkedRecipe>> FollowingRecipies({List<String>? followingIDs}) async
   try{
 
  await FirebaseFirestore.instance
-    .collection('forkedRecipe').
+    .collection('forkedRecipe').//++
    where('userID',  whereIn : followingIDs ) // we need to change username to userName
     .get() //Future<QuerySnapshot<Map<String, dynamic>>>
     .then((QuerySnapshot querySnapshot) {
@@ -81,6 +81,43 @@ Future<List<forkedRecipe>> FollowingRecipies({List<String>? followingIDs}) async
         querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
        
 usersRecipies.add(forkedRecipe.fronJson(doc.data() as Map<String, dynamic>));  
+
+        });
+    });
+    for (var element in usersRecipies) {
+      Get.snackbar("title", element.title.toString());
+    }
+    return usersRecipies;
+    }catch(err){
+return [];
+    }
+
+  //for testing we will limit the floowingIDs to only 10 users
+
+  //recipe title, image, likes, profileIMG, user name, useID, recipeID, and parentID for forked;
+
+// when creating the forked Widget make sure to pass an atribute (parentID) that tell wether the recipe is forked or not
+
+}
+
+//not ready
+Future<List<originalRecipe>> FollowingRecipies({List<String>? followingIDs}) async{
+  // we will use the list of a ll the users that we followe to aquire their recipies
+
+  // by using the (in) ley word in the query
+  List<originalRecipe> usersRecipies=[];
+
+  try{
+
+ await FirebaseFirestore.instance
+    .collection('recipes').//++
+   where('userID',  whereIn : followingIDs ) // we need to change username to userName
+    .get() //Future<QuerySnapshot<Map<String, dynamic>>>
+    .then((QuerySnapshot querySnapshot) {
+      
+        querySnapshot.docs.forEach((doc) {// QuerySnapshot<Object?>
+       
+usersRecipies.add(originalRecipe.fronJson(doc.data() as Map<String, dynamic>));  
 
         });
     });
