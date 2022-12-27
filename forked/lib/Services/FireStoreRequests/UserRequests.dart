@@ -55,7 +55,7 @@ Future<user> readUserData({String? userID}) async {
     await FirebaseFirestore.instance
         .collection('users')
         .orderBy('followersNumber',
-            descending: false) // we need to change username to userName
+            descending: true) // we need to change username to userName
         .get() //Future<QuerySnapshot<Map<String, dynamic>>>
         .then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
