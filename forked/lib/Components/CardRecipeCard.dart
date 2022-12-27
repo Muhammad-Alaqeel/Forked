@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:forked/Services/FireStoreRequests/likedRecipeRequests.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
 import '../Constants/styles.dart';
+import '../main.dart';
 
 class SmallCardRecipeCard extends StatelessWidget {
+  bool isLiked=false;
   SmallCardRecipeCard(
       {super.key,
       required this.recipeName,
@@ -80,15 +83,34 @@ class SmallCardRecipeCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     //-----------------------Like-----------------------------------
-                    FittedBox(
-                      fit: BoxFit.contain,
-                      child: Container(
-                        //color: Colors.blue,
-                        child: LikeButton(
-                          size: 24,
-                          likeCount: recipeLikeCount,
-                          //onTap: likeFunct,
+                    InkWell(
+                      onTap: () => Get.snackbar("title", "message"),
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: InkWell(
                           
+                          child: Container(
+                            //color: Colors.blue,
+                            child: LikeButton(
+                            
+                              size: 24,
+                              likeCount: recipeLikeCount,
+                       
+                          //     print("liked is working");
+                          //     if(isLiked){
+                          //       isLiked=false;
+                          //  deleteLiked(likedRecipieID: "${myUserData.userID}_${"here is recipie id"}");
+                    
+                          //     }else{
+                          //         isLiked=true;
+                          //    createLiked(recipeID: 'here is the recipie id', userID: myUserData.userID.toString());
+                    
+                    
+                              
+                            // },
+                              
+                            ),
+                          ),
                         ),
                       ),
                     ),

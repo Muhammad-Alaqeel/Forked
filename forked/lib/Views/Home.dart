@@ -139,12 +139,30 @@ class Home extends StatelessWidget {
                 ),
 
                 //Exprore List :
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: listController.exploreList,
-                  ),
-                ),
+                // SingleChildScrollView(
+                //   scrollDirection: Axis.horizontal,
+                //   child: Row(
+                //     children: listController.exploreList,
+                //   ),
+                // ),
+               GetBuilder<ListsOfHomeController>(builder: (er){
+                 return  Container(
+          width: Get.width,
+          height: Get.height*.4,
+                            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*.02),
+                            child: GridView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: listController.exploreList.length,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              childAspectRatio: 1.5
+                            
+                            ), itemBuilder: (context, index){
+                            
+                              return listController.exploreList[index];
+                            }),
+                          );
+               }), 
               ],
             ),
           ),

@@ -5,8 +5,7 @@ import 'package:forked/Models/likedRecipe.dart';
 
 final db = FirebaseFirestore.instance;
 
-createLiked({required String recipeID,required String userID}) async {
- 
+ createLiked({required String recipeID,required String userID}) async {
   // User appt =
   //     User(userID: id, email: email);
 try{
@@ -16,20 +15,25 @@ try{
 
 }catch(err){
 Get.snackbar("title", "error inside createLiked");
+
+
+
 }
 }
 
 
-deleteLiked({required String likedRecipieID})async{
+ deleteLiked({required String likedRecipieID})async{
   try{
 
 
 await db.collection("likedRecipe").doc(likedRecipieID).delete();
 
+
   }catch(ee){
 
 
 Get.snackbar("title", "error inside deleteLiked");
+
 
 
   }
