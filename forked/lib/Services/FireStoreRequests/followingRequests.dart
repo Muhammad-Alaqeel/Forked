@@ -75,7 +75,7 @@ List<following> userFollowers=[];
 
 try{
   await FirebaseFirestore.instance
-    .collection('following').
+  .collection('following').
    where('followedUserID', isEqualTo: userID ) // we need to change username to userName
     .get() //Future<QuerySnapshot<Map<String, dynamic>>>
     .then((QuerySnapshot querySnapshot) {
