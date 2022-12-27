@@ -127,9 +127,12 @@ class Profile extends StatelessWidget {
 
                         //List of saved recipes :
                         profileController.currentIndex == 1
-                            ? GridView.count(
-                              crossAxisCount: 2,
-                            children: profileController.userSaved,
+                            ? Container(
+                              height: 600,
+                              child: GridView.count(
+                                crossAxisCount: 2,
+                              children: profileController.userSaved,
+                              ),
                             )
                             // Padding(
                             //     padding: EdgeInsets.all(0),

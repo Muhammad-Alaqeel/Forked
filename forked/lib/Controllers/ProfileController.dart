@@ -54,17 +54,15 @@ class ProfileController extends GetxController {
     //userSaved list :
     userSaved = [
       Container(
-        //margin: EdgeInsets.symmetric(horizontal: 10),
-        // height: Get.height * .3,
-        // width: Get.width * .4,
-        height: 50,
-        width: 50,
-        child: Text("kjhj")
-        // SmallCardRecipeCard(
-        //   recipeName: "pancake",
-        //   recipeImage: "images/6.jpg",
-        //   ImageFunct: () {},
-        // ),
+        padding: EdgeInsets.all(5),
+        margin: EdgeInsets.symmetric(horizontal: 10),
+        height: Get.height * .3,
+        width: Get.width * .4,
+        child: SmallCardRecipeCard(
+          recipeName: "pancake",
+          recipeImage: "images/6.jpg",
+          ImageFunct: () {},
+        ),
       )
       // Column(
       //   children: [

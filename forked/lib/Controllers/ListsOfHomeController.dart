@@ -9,6 +9,7 @@ class ListsOfHomeController extends GetxController {
   List<Widget> mostPopularList = [];
   List<Widget> followingList = [];
   List<Widget> exploreList = [];
+  
 
   @override
   void onInit() {
@@ -21,6 +22,7 @@ class ListsOfHomeController extends GetxController {
       addInExploreList();
     }
   }
+
 
   addInDaliyInspirationList() {
     daliyInspirationList.add(Padding(
