@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:forked/Models/User.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
@@ -10,22 +11,25 @@ import 'Models/originalRecipie.dart';
 import 'Models/savedRecipe.dart';
 import 'firebase_options.dart';
 
-  user myUserData=user();
-  List<originalRecipe> userOriginalRecipies =[];
-   List<forkedRecipe> userForkedRecipeRecipies =[];
-  List<likedRecipe> usersLikedRecipies =[];
-  List<savedRecipe> userSavedRecipies =[];
-  List<following> userFollowing = [];
-  List<following> userFollowers =[];
-main()async {
+user myUserData = user();
+List<originalRecipe> userOriginalRecipies = [];
+List<forkedRecipe> userForkedRecipeRecipies = [];
+List<likedRecipe> usersLikedRecipies = [];
+List<savedRecipe> userSavedRecipies = [];
+List<following> userFollowing = [];
+List<following> userFollowers = [];
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
-   WidgetsFlutterBinding.ensureInitialized();
-
+  WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
-
 
   runApp(MyApp());
 }
@@ -39,9 +43,7 @@ class MyApp extends StatelessWidget {
       initialRoute: NamedRoute.StratingPage,
        getPages: appRoutes,
 
-
-
-        // home:Home(),
+      // home: Profile(),
 
 //  home: createRecipe(
 
