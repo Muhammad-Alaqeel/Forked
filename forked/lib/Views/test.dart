@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 import '../Components/CardRecipeCard.dart';
 import '../Components/Recipeinfo.dart';
 import '../Services/FireStoreRequests/likedRecipeRequests.dart';
+import '../Services/Image Services/ImagePicker.dart';
 
 class test extends StatelessWidget {
   const test({super.key});
@@ -87,6 +88,14 @@ class test extends StatelessWidget {
               // setForkedRecipe(userID: "123ikdjsdoiwjad2");
             // },
             // child: Text("data"))
+
+
+
+
+
+            ElevatedButton(onPressed: (){
+              openAndUploadPic(identifier: 'kdjkjdnaslaksaslkmddwef');
+            }, child: Text("data"))
       ],
     )
     );

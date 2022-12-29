@@ -61,10 +61,10 @@ class ListsOfHomeController extends GetxController {
                 ),
             child: SmallCardRecipeCard(
               recipeName: explorrer[i].title!,
-              recipeImage: "images/6.jpg",
+              recipeImage: explorrer[i].imgPath,
               userName: explorrer[i].username,
               ImageFunct: () {
-                Get.to(ViewRecipe(myRecipie: explorrer[i],));
+                Get.to(ViewRecipe(myRecipie: explorrer[i]));
               },
               likeFunct: () {},
               accontFunct: () {},
@@ -87,10 +87,10 @@ class ListsOfHomeController extends GetxController {
                 ),
             child: SmallCardRecipeCard(
               recipeName: forkedExplorer[i].title!,
-              recipeImage: "images/6.jpg",
+              recipeImage: forkedExplorer[i].imgPath,
               userName: forkedExplorer[i].username,
               ImageFunct: () {
-                Get.to(ViewMyForkedRecipe(myRecipie: forkedExplorer[i],));
+                Get.to(viewMyForkedRecipie(myRecipie: forkedExplorer[i],));
 
               },
               likeFunct: () {},
@@ -158,7 +158,7 @@ class ListsOfHomeController extends GetxController {
             constraints: BoxConstraints(),
             child: SmallCardRecipeCard(
               recipeName: originals[i].title!,
-              recipeImage: "images/6.jpg",
+              recipeImage: originals[i].imgPath,
               userName: originals[i].username,
               ImageFunct: () {},
               likeFunct: () {},
@@ -182,7 +182,7 @@ class ListsOfHomeController extends GetxController {
                 ),
             child: SmallCardRecipeCard(
               recipeName: forks[i].title!,
-              recipeImage: "images/6.jpg",
+              recipeImage: forks[i].title!,
               userName: forks[i].username,
               ImageFunct: () {},
               likeFunct: () {},
@@ -232,7 +232,7 @@ class ListsOfHomeController extends GetxController {
                 ),
             child: SmallCardRecipeCard(
               recipeName: explorrer[i].title!,
-              recipeImage: "images/6.jpg",
+              recipeImage: explorrer[i].imgPath,
               userName: explorrer[i].username,
               ImageFunct: () {},
               likeFunct: () {},
@@ -256,7 +256,7 @@ class ListsOfHomeController extends GetxController {
                 ),
             child: SmallCardRecipeCard(
               recipeName: forkedExplorer[i].title!,
-              recipeImage: "images/6.jpg",
+              recipeImage: forkedExplorer[i].imgPath,
               userName: forkedExplorer[i].username,
               ImageFunct: () {},
               likeFunct: () {},

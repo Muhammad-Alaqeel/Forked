@@ -29,13 +29,29 @@ setRecipe(
       "minutes":minutes,
       "servings":servings,
       "calories":calories,
-      "likes":likes,
+      "likes":0,
       "ingredients":ingredients,
       "preperation":preperation,
       "userProfileImage":userProfileImage,
    
 
     });
+    // Get.snackbar("item", userID.toString());
+    //     Get.snackbar("item", username.toString());
+
+    // Get.snackbar("item", docRef.toString());
+
+    // Get.snackbar("item", imgPath.toString());
+
+    // Get.snackbar("item", title.toString());
+
+    // Get.snackbar("item", minutes.toString());
+    // Get.snackbar("item", servings.toString());
+
+    // Get.snackbar("item", calories.toString());
+
+    // Get.snackbar("item", ingredients.toString());
+
     Get.snackbar("title", "set recipe is working");
   } catch (err) {
     Get.snackbar("title", "error inside set recipe");
