@@ -36,25 +36,9 @@ setRecipe(
    
 
     });
-    // Get.snackbar("item", userID.toString());
-    //     Get.snackbar("item", username.toString());
-
-    // Get.snackbar("item", docRef.toString());
-
-    // Get.snackbar("item", imgPath.toString());
-
-    // Get.snackbar("item", title.toString());
-
-    // Get.snackbar("item", minutes.toString());
-    // Get.snackbar("item", servings.toString());
-
-    // Get.snackbar("item", calories.toString());
-
-    // Get.snackbar("item", ingredients.toString());
-
-    Get.snackbar("title", "set recipe is working");
+    //Get.snackbar("title", "set recipe is working");
   } catch (err) {
-    Get.snackbar("title", "error inside set recipe");
+    //Get.snackbar("title", "error inside set recipe");
   }
 }
 
@@ -67,7 +51,7 @@ originalRecipe returned=originalRecipe();
    await db.collection("recipes").doc(recipeID).get().then(
   (DocumentSnapshot doc) {
 returned= originalRecipe.fronJson(doc.data() as Map<String, dynamic>);  
-Get.snackbar("title", returned.imgPath.toString());  // ...
+//Get.snackbar("title", returned.imgPath.toString());  // ...
   },
   
 );
@@ -77,7 +61,7 @@ return returned;
 
  }catch(err){
   
-  Get.snackbar("title", "readUser");
+  //Get.snackbar("title", "readUser");
 return returned;
   
   }
@@ -106,7 +90,7 @@ userRecipies.add(originalRecipe.fronJson(doc.data() as Map<String, dynamic>));
     });
 
 for (var element in userRecipies) {
-Get.snackbar("title", element.title.toString());
+//Get.snackbar("title", element.title.toString());
 }
 return userRecipies;
 }

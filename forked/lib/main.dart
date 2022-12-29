@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:forked/Models/User.dart';
+import 'package:forked/Views/othersProfile.dart';
+import 'package:forked/Views/test.dart';
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'Models/following.dart';
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
       initialRoute: NamedRoute.StratingPage,
        getPages: appRoutes,
 
-      // home: Profile(),
+      // home: test(),
 
 //  home: createRecipe(
 
