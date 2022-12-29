@@ -29,7 +29,7 @@ setRecipe(
       "minutes":minutes,
       "servings":servings,
       "calories":calories,
-      "likes":likes,
+      "likes":0,
       "ingredients":ingredients,
       "preperation":preperation,
       "userProfileImage":userProfileImage,
