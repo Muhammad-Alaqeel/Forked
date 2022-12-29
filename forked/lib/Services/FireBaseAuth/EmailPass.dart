@@ -100,18 +100,7 @@ signOut() async {
   } catch (error) {}
 }
 
-signOut()async{
-  try{
 
-var user= await FirebaseAuth.instance.signOut();
-
-// print(user.user!.uid);
-// print(FirebaseAuth.instance.currentUser);
-// Get.offAll();
-  }catch(err){
-print(err.toString());
-  }
-}
 passwordReset({required String email}) async {
   try {
     await inctence.sendPasswordResetEmail(email: email);

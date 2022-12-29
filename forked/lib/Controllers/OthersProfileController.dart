@@ -115,7 +115,7 @@ class OthersProfileController extends GetxController {
               imagePath:
                   "https://insanelygoodrecipes.com/wp-content/uploads/2021/05/Ground-Chicken-Meatballs-683x1024.png",
               on_Tap: () {
-                Get.to(ViewMyForkedRecipe(
+                Get.to(viewMyForkedRecipie(
                   myRecipie: innovationsRecipies[i],
                 ));
               },

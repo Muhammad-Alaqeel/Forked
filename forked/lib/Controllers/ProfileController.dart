@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:forked/Components/CardRecipeCard.dart';
 import 'package:forked/Models/savedRecipe.dart';
 import 'package:forked/Services/FireStoreRequests/savedRecipeRequests.dart';
+import 'package:forked/Views/viewForkedRecippie.dart';
 import 'package:get/get.dart';
 
 import '../Components/RecipeImage.dart';
@@ -10,7 +11,6 @@ import '../Models/originalRecipie.dart';
 import '../Services/FireStoreRequests/RiecipeRequests.dart';
 import '../Services/FireStoreRequests/forkedRecipeRequests.dart';
 import '../Views/ViewRecipe.dart';
-import '../Views/viewForkedRecippie.dart';
 import '../main.dart';
 
 class ProfileController extends GetxController {
@@ -96,7 +96,7 @@ class ProfileController extends GetxController {
               imagePath:
                   "https://insanelygoodrecipes.com/wp-content/uploads/2021/05/Ground-Chicken-Meatballs-683x1024.png",
               on_Tap: () {
-                Get.to( ViewMyForkedRecipe(myRecipie: innovationsRecipies[i],));
+                Get.to( viewMyForkedRecipie(myRecipie: innovationsRecipies[i],));
 
               },
             )),
