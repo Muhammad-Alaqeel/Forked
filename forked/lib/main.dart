@@ -2,22 +2,20 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:forked/Models/User.dart';
-import 'package:forked/Views/othersProfile.dart';
-import 'package:forked/Views/test.dart';
+
 import 'package:get/get.dart';
 import 'package:forked/Routes/Router.dart';
 import 'Models/following.dart';
-import 'Models/forkedRecipe.dart';
+
 import 'Models/likedRecipe.dart';
-import 'Models/originalRecipie.dart';
-import 'Models/savedRecipe.dart';
+
 import 'firebase_options.dart';
 
 user myUserData = user();
-List<originalRecipe> userOriginalRecipies = [];
-List<forkedRecipe> userForkedRecipeRecipies = [];
+// List<originalRecipe> userOriginalRecipies = [];
+// List<forkedRecipe> userForkedRecipeRecipies = [];
 List<likedRecipe> usersLikedRecipies = [];
-List<savedRecipe> userSavedRecipies = [];
+// List<savedRecipe> userSavedRecipies = [];
 List<following> userFollowing = [];
 List<following> userFollowers = [];
 main() async {
@@ -42,6 +40,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+  
       initialRoute: NamedRoute.StratingPage,
        getPages: appRoutes,
 
